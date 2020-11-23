@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+// choose if you are an admin or user
+// Route::get('/admin_user', 'Admin_UserController@index');
+
+Route::get('/home', 'HomeController@index');
+
