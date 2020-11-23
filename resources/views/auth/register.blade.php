@@ -39,8 +39,7 @@
                             </div>
                         </div>
 
-                        <!--for dealer 
-                       -->
+                        <!--for dealer-->
                         <div class="form-group row">
                             <label for="dealer" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
@@ -52,8 +51,22 @@
                                 </select>
                             </div>
                         </div>
-                        <!-- -->
 
+                        
+                        <div class="form-group row">
+                            <label for="phone_no" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+
+                            <div class="col-md-6">
+                                <input id="phone_no" type="phone_no" class="form-control @error('phone_no') is-invalid @enderror" name="phone_no" value="{{ old('phone_no') }}" required autocomplete="phone_no">
+
+                                @error('phone_no')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+            
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
