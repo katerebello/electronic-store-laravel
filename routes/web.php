@@ -20,5 +20,14 @@ Route::get('/', function () {
 Auth::routes();
 
 
+Route::get('/adminprofile/{user}','roleController@admin');
+Route::get('/userprofile/{user}','roleController@user');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/homepage', 'HomeController@show');
+
+Route::post('/storeuser', 'roleController@store');       
+
+
+

@@ -4,8 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <p> WELCOME TO CSK-Estore {{Auth::user()->name}}</p>  
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Home page') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +16,8 @@
                     @endif
 
                     @if ( Auth::user()->role  == 'admin' )
-                        <h1> You are logged in as admin!</h1>
+                        
+                        <h1>You are logged in as admin!</h1>
                         
                     @else
                         <h1> You are logged in as user!</h1>
