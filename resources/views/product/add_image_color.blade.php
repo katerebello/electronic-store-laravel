@@ -10,7 +10,8 @@
                 <!-- image -->
                 <div class="form-group row">
                     <label for="product_image" class="col-md-4 col-form-label ">Product Image</label>
-                    <input type="file" class="ml-3 form-control-file" id="product_image" name="product_image[]" multiple>
+                    <input type="file" class="ml-3 form-control-file" id="product_image" name="product_image[]" 
+                    multiple required>
 
                     @error('product_image')
                     <strong>{{ $message }}</strong>
@@ -24,7 +25,7 @@
 
                     <select id="color" class="ml-3 form-control @error('color')
                     is-invalid @enderror" name="color[]" color="color" multiple value="{{ old('color') }}" 
-                    autocomplete="color" autofocus>
+                    autocomplete="color" autofocus required>
                         <option value="" selected="true" disabled="disabled">Select an Option</option>
                         <option value="White">White</option>
                         <option value="Black">Black</option>
