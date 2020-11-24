@@ -29,10 +29,10 @@ Route::get('/product/create', 'ProductController@create');
 Route::post('/product', 'ProductController@store');
 
 // add image field is shown
-Route::get('/product/add_image', 'ProductController@index');
+Route::get('/product/add_image_color', 'ProductController@index');
 
 // validate product image and redirect to all.blade.php
-Route::post('/product/images', 'ImagesController@store');
+Route::post('/product/images_color', 'Images_ColorController@store');
 
 // all product page
-Route::get('/all', 'ImagesController@index');
+Route::get('/all', 'Images_ColorController@index');

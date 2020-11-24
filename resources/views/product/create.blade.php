@@ -53,22 +53,7 @@
                     @enderror
                 </div>
 
-                <!-- color -->
-                <div class="form-group row">
-                    <label for="color" class="col-md-4 col-form-label ">Product Color</label>
-
-                    <input type="color" name="color" id="color" multiple class="ml-3 form-control @error('color')
-                    is-invalid @enderror" color="color" value="{{ old('color') }}" autocomplete="color" autofocus >
-
-                    <!-- <input id="color" type="text" class="ml-3 form-control @error('color')
-                    is-invalid @enderror" name="color" color="color" value="{{ old('color') }}" autocomplete="color" autofocus> -->
-
-                    @error('color')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+                
 
                 <!-- model no -->
                 <div class="form-group row">

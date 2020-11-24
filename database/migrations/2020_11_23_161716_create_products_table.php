@@ -20,9 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->string('product_description');
             $table->bigInteger('product_price');
-            // $table->string('product_image');
             $table->bigInteger('model_no');
-            $table->string('color');
             $table->timestamps();
 
             // fk

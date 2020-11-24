@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Images;
 use App\Product;
 use App\User;
+use App\Colors;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
-class ImagesController extends Controller
+class Images_ColorController extends Controller
 {
     public function __construct()
     {
@@ -18,12 +19,16 @@ class ImagesController extends Controller
     {   
         $user = User::all();
         $products = Product::all();
-        $productImages = Images::all();
-        return view('product/all', compact('user', 'products', 'productImages'));
+        $productimages = Images::all();
+        $productcolors = Colors::All();
+        return view('product/all', compact('user', 'products', 'productimages', 'productcolors'));
+        
     }
     public function store()
     {
-        // $product = Product::find('user_id');
+        // $data = request()->all();
+        // dd($data);
+
         $product_id = auth()->user()->products->pluck('id');
         // dd($product_id[0]);
 
@@ -41,6 +46,16 @@ class ImagesController extends Controller
         }
 
         Images::insert($store_image);
+
+        $store_color = [];
+        foreach (request('color') as $index => $color) {
+            $store_color[$index] = [
+                'color' => $color,
+                'product_id' => $product_id[0],
+            ];
+        }
+
+        Colors::insert($store_color);
 
         return redirect('/all');
     }

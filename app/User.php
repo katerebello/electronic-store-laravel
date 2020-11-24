@@ -41,8 +41,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class)->orderBy('created_at', 'DESC');
     }
-    public function products_images()
-    {
-        return $this->belongsTo(Product::class);
-    }
 }
