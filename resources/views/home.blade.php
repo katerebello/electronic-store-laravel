@@ -13,10 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                
                     @if ( Auth::user()->role  == 'admin' )
                         <h1> You are logged in as admin!</h1>
-                        
+                        <a href="/product/create">Add Products</a><br>
+                        <a href="/product">See your products</a>
                     @else
                         <h1> You are logged in as user!</h1>
                     @endif 
