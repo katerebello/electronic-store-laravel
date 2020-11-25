@@ -22,6 +22,6 @@ class UserController extends Controller
             'email'=> $request->email,
             'phone_no' => $request->phone_no,
             ]);
-        return redirect('/homepage');
+        return view('welcome');
     }
 }

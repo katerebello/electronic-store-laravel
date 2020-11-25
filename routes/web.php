@@ -25,9 +25,7 @@ Route::get('/userprofile/{user}','UserController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/homepage', function(){
-    return view('homepage');
-});
+
 Route::get('/admindashboard', function(){
     return view('admindashboard');
 });
