@@ -17,7 +17,7 @@ class CreateUserprofilesTable extends Migration
             $table->id();
             $table->string('username');
             $table->string('email');
-            $table->string('password');
+            $table->string('phone_no');
             $table->unsignedBigInteger('user_id');
 
             $table->timestamps();

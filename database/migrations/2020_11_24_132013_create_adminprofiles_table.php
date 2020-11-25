@@ -17,6 +17,7 @@ class CreateAdminprofilesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('phone_no');
             $table->string('company_name');
             $table->unsignedBigInteger('user_id');
 

@@ -20,14 +20,21 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/adminprofile/{user}','roleController@admin');
-Route::get('/userprofile/{user}','roleController@user');
+Route::get('/adminprofile/{user}','AdminController@index');
+Route::get('/userprofile/{user}','UserController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/homepage', 'HomeController@show');
+Route::get('/homepage', function(){
+    return view('homepage');
+});
+Route::get('/admindashboard', function(){
+    return view('admindashboard');
+});
 
-Route::post('/storeuser', 'roleController@store');       
+Route::post('/storeuser', 'UserController@store');  
+Route::post('/storeadmin', 'AdminController@store');       
+
 
 
 
