@@ -46,7 +46,7 @@ class User extends Authenticatable
     {
         return $this->hasOne(adminprofile::class);
     }
-    public function products()
+    public function product()
     {
         return $this->hasMany(Product::class)->orderBy('created_at', 'DESC');
     }

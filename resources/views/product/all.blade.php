@@ -6,6 +6,7 @@
         <div class="col-lg-4">
             @foreach($products as $product)
             <h2>{{ $product->product_name}}</h2>
+            <a href="/product/{{$product->id}}/edit">Edit</a>
             <hr>
             @endforeach
             

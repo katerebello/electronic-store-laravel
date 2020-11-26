@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/adminprofile/{user}','AdminController@index');
@@ -48,7 +49,19 @@ Route::post('/product', 'ProductController@store');
 Route::get('/product/add_image_color', 'ProductController@index');
 
 // validate product image and redirect to all.blade.php
-Route::post('/product/images_color', 'Images_ColorController@store');
+Route::post('/product/images_color', 'DetailController@store');
 
 // all product page
-Route::get('/all', 'Images_ColorController@index');
+Route::get('/all', 'DetailController@index');
+
+// will redrect you to the edit form
+Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.edit');
+
+// edit product
+Route::patch('/product/{product}', 'ProductController@update')->name('product.update');
+
+// will redrect you to the color and image edit form
+Route::get('/product/{product}/edit_image_color', 'DetailController@edit')->name('detail.edit');
+
+// edit image and color
+Route::patch('/product/detail/{product}', 'DetailController@update')->name('detail.update');
