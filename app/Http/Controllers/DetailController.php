@@ -17,31 +17,30 @@ class DetailController extends Controller
     }
 
     // change
-    public function index(User $user)
+    public function index(User $user, Product $product)
     {
-        $user_id = auth()->user()->id;
-        // dd($products);
-        
+        // dd(Product::find($product->id)->color);
+        $users = auth()->user();
+        // gives the logged in admin ka id
+        // dd($user_id);
+
         $users_products = auth()->user()->product()->get();
+        // gives the logged in admin ka products
         // dd($users_products);
 
         $users_products_id = auth()->user()->product()->pluck('id');
+        //gives the logged in admin ka products id .. i.e 1 and 4 for now
         // dd($users_products_id);
-        
-        $productimages = [];
-        foreach ($users_products as $index => $user_product){
-            $productimages[$index] = Image::find($user_product->id);
-            
-        }
-        echo($productimages);
-        // dd($product_id);
-        // $products = Product::all();
-        $productimages = Image::where('id', $users_products)->get();
-        // dd($productimages);
-        // dd($productimages);
-        // $productcolors = Color::where('id', $product_id)->get();
-        // dd($productcolors);
-        return view('product/all', compact('user', 'products', 'productimages', 'productcolors'));
+
+        $images = Image::whereIn('product_id', $users_products_id)->pluck('product_image');
+        $colors = Color::whereIn('product_id', $users_products_id)->pluck('color');
+        // dd($colors);
+        $image_ids = Image::whereIn('product_image', $images)->pluck('product_id');
+        $color_ids = Color::whereIn('color', $colors)->pluck('product_id');
+        // dd($color_ids);
+        // echo($id);
+        // echo($images);
+        return view('product/all', compact('users', 'users_products', 'images', 'colors', 'image_ids', 'color_ids'));
     }
 
     public function store()
@@ -76,50 +75,55 @@ class DetailController extends Controller
         return redirect('/all');
     }
 
-    public function edit(Product $product)
+    public function edit(Product $product, User $user)
     {
         return view('product/edit_image_color', compact('product'));
     }
 
 
-    public function update(Product $product)
-    {   
+    public function update(Product $product, User $user)
+    {
+        // dd(request()->all());
         $user = auth()->user()->id;
-        // dd($user);
-        $pages = Product::where('id', $user)->with('color')->get();
-        // $color = Color::where('id', )
-        dd($pages);
-        // foreach ($pages as $page){
-        // }
-        // $blog->delete();
-        
+        if (request('color')) {
+            $colors = Color::where('product_id', $product->id);
+            // dd($colors);
+            // iterate through the Collection
+            foreach ($colors as $old_color) {
+                $old_color->delete();
+                // dd($color);
+            }
+            
+            // dd($colors);
+            // $colors->each->delete();
+            $store_color = [];
+            // dd(request('color'));
+            foreach (request('color') as $index => $color) {
+                $store_color[$index] = [
+                    'color' => $color,
+                    'product_id' => $product->id,
+                ];
+            }
+            // Color::where('product_id', $product->id)->update(array_merge($store_color));
+            // $product->color()->update(array_merge($store_color));
+        }
 
-        // if (request('color')) {
-        //     $store_color = [];
-        //     foreach (request('color') as $index => $color) {
-        //         $store_color[$index] = [
-        //             'color' => $color,
-        //             'product_id' => $product->id,
-        //         ];
-        //     }
+        if (request('product_image')) {
+            dd($user);
+            $images = Image::where('product_id', $product->id)->pluck('product_image');
+            
+            $store_image = [];
+            foreach (request('product_image') as $index => $image) {
+                $image_path = $image->store('uploads', 'public');
 
-        //     // $product->color()->update(array_merge($store_color));
-        // }
+                $store_image[$index] = [
+                    'product_image' => $image_path,
+                    'product_id' => $product->id,
+                ];
+            }
+            $product->color()->update(array_merge($store_image));
+        }
 
-        // if (request('product_image')) {
-        //     $store_image = [];
-        //     foreach (request('product_image') as $index => $image) {
-        //         $image_path = $image->store('uploads', 'public');
-
-        //         $store_image[$index] = [
-        //             'product_image' => $image_path,
-        //             'product_id' => $product->id,
-        //         ];
-        //     }
-        //     // $product->color()->update(array_merge($store_image));
-        // }
-        
-        // $image = DB::table('images')->get(); 
         return redirect("/all");
     }
 }

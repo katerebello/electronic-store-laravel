@@ -59,8 +59,9 @@ class ProductController extends Controller
             'product_price' => 'required | integer',
             'model_no' => 'required | integer',
         ]);
-
-        auth()->user()->product()->update(array_merge($data));
+        
+        Product::where('id', $product->id)->update(array_merge($data));
+        // auth()->user()->product()->update(array_merge($data));
 
         return redirect("/product/" . $product->id  . "/edit_image_color");
     }
