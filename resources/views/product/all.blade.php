@@ -1,30 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
+@foreach($users_products as $users_product)
 <div class="container">
-    <div class="row">
-        <div class="col-lg-4">
-            @foreach($products as $product)
-            <h2>{{ $product->product_name}}</h2>
-            <a href="/product/{{$product->id}}/edit">Edit</a>
+    <div class="row" style="border 1px solid black">
+        <div class="col-lg-4" >
+            <h2>{{ $users_product->product_name}}</h2>
             <hr>
+            @foreach ($users_product->image as $image)
+
+            <img src="storage\{{ $image->product_image}}" class="w-25" alt="image">
             @endforeach
-            
         </div>
         
         <div class="col-lg-4">
-            @foreach($productimages as $productimage)
-            <img src="/storage/{{ $productimage->product_image }}" alt="" width="150" height="150" style="display: inline-block;">
-            @endforeach
+        <a href="product\{{ $users_product->id}}\edit"><button>EDIT</button></a>
         </div>
 
         <div class="col-lg-4">
             <h2>Available in :</h2>
-            @foreach($productcolors as $productcolor)
-            <p>{{ $productcolor->color }}</p>
+            @foreach ($users_product->color as $color)
+                {{$color->color}}
             @endforeach
             
         </div>
     </div>
 </div>
+@endforeach
 @endsection

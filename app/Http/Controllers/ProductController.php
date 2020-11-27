@@ -53,13 +53,14 @@ class ProductController extends Controller
     {
         // $data = request()->all();
         // dd($product->id);
+        //dd($product);
         $data = request()->validate([
             'product_name' => 'required',
             'product_description' => 'required',
             'product_price' => 'required | integer',
             'model_no' => 'required | integer',
         ]);
-
+            //dd(auth()->user()->product()->get());
         auth()->user()->product()->update(array_merge($data));
 
         return redirect("/product/" . $product->id  . "/edit_image_color");
