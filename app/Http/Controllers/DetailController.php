@@ -30,7 +30,8 @@ class DetailController extends Controller
         $product_id = auth()->user()->product()->pluck('id');
         // dd($product_id[0]);
         $store_image = [];
-        foreach (request('product_image') as $index => $image) {
+        foreach (request('product_image') as $index => $image) 
+        {
             $image_path = $image->store('uploads', 'public');
 
             // no idea why it gives err
@@ -44,7 +45,8 @@ class DetailController extends Controller
         }
         Image::insert($store_image);
         $store_color = [];
-        foreach (request('color') as $index => $color) {
+        foreach (request('color') as $index => $color) 
+        {
             $store_color[$index] = [
                 'color' => $color,
                 'product_id' => $product_id[0],
@@ -55,36 +57,36 @@ class DetailController extends Controller
         return redirect('/all');
     }
 
-    public function edit(Product $product)
+    public function edit(Product $product, User $user)
     {
         return view('product/edit_image_color', compact('product'));
     }
 
-
-    public function update(Product $product,Request $request)
-    {   
-        //dd(request()->all());
-        if(request('color'))
+    public function update(Product $product)
+    {
+        $product = Product::find($product->id);
+        if (request('color')) 
         {
             $product->color->each->delete();
             $store_color = [];
-            foreach($product->color as $index => $color){
-                $store_color[$index] =[
+            foreach (request('color') as $index => $color) 
+            {
+                $store_color[$index] = [
                     'color' => $color,
                     'product_id' => $product->id,
-            ];
+                ];
             }
             Color::insert($store_color);
         }
-        
-        if(request('product_image'))
+
+        if (request('product_image')) 
         {
             $product->image->each->delete();
             $store_image = [];
-            //dd(request()->all());
-            foreach(request('product_image') as $index => $image)
+            foreach (request('product_image') as $index => $image) 
             {
-                $image_path = $image->store('uploads','public');
+                $image_path = $image->store('uploads', 'public');
+
                 $store_image[$index] = [
                     'product_image' => $image_path,
                     'product_id' => $product->id,

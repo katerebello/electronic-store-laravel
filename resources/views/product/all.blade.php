@@ -14,7 +14,8 @@
         </div>
         
         <div class="col-lg-4">
-        <a href="product\{{ $users_product->id}}\edit"><button>EDIT</button></a>
+            <a href="/product/{{$users_product->id}}/edit"><button>EDIT</button> </a>
+            <a href="/product/delete/{{$users_product->id}}"><button>DELETE</button> </a>
         </div>
 
         <div class="col-lg-4">

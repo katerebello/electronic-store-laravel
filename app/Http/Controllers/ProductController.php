@@ -46,11 +46,15 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
+        // $product = Product::find($product->id);
+        // dd($product->image);
+
         return view('product/edit', compact('product'));
     }
     
     public function update(Product $product)
     {
+        // dd($product->image);
         // $data = request()->all();
         // dd($product->id);
         //dd($product);
@@ -60,9 +64,12 @@ class ProductController extends Controller
             'product_price' => 'required | integer',
             'model_no' => 'required | integer',
         ]);
-            //dd(auth()->user()->product()->get());
-        auth()->user()->product()->update(array_merge($data));
+        
+        Product::where('id', $product->id)->update(array_merge($data));
+        // auth()->user()->product()->update(array_merge($data));
 
         return redirect("/product/" . $product->id  . "/edit_image_color");
     }
+
+    
 }

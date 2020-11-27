@@ -50,4 +50,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class)->orderBy('created_at', 'DESC');
     }
+    
 }
