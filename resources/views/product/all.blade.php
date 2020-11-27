@@ -1,26 +1,29 @@
 @extends('layouts.app')
 
+
+<!-- katyyyy keep yourssssss  -->
 @section('content')
-<!-- <h1>{{ $users_products }}</h1>
-<h1>{{ $images }}</h1>
-<h1>{{ $colors }}</h1>
-<h1>{{ $image_ids }}</h1>
-<h1>{{ $color_ids }}</h1> -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-4">        
-            @foreach($users_products as $product)
-                <h2>{{ $product->product_name}}</h2>
-                @foreach($image_ids as $index=>$id )
-                        @if($product->id == $id)
-                            <img src="/storage/{{$images[$index]}}" alt="" width="100" height="100">
-                        @endif
-                @endforeach
-                
+        @foreach($users_products as $product)
+            <div class="col-lg-4">
+                <h1>{{$product->product_name}}</h1>
+                <p hidden>{{$x = $product->image->count()}}</p>
+                <p hidden>{{$y = $product->color->count()}}</p>
                 <a href="/product/{{$product->id}}/edit">Edit</a>
-                <hr>
-            @endforeach
-        </div>
+                <a href="/product/delete/{{$product->id}}">Delete</a>
+            </div>
+            <div class="col-lg-4">
+            @for ($i = 0; $i < $x; $i++) 
+                    <img src="/storage/{{$product->image[$i]->product_image}}" alt="" width="100" height="100">
+                @endfor
+            </div>
+            <div class="col-lg-4">
+                @for ($i = 0; $i < $y; $i++) 
+                    <p>{{$product->color[$i]->color}}</p>
+                @endfor
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection

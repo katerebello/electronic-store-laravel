@@ -46,11 +46,15 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
+        // $product = Product::find($product->id);
+        // dd($product->image);
+
         return view('product/edit', compact('product'));
     }
     
     public function update(Product $product)
     {
+        // dd($product->image);
         // $data = request()->all();
         // dd($product->id);
         $data = request()->validate([
@@ -65,4 +69,6 @@ class ProductController extends Controller
 
         return redirect("/product/" . $product->id  . "/edit_image_color");
     }
+
+    
 }

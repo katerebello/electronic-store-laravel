@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Product;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +21,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -49,3 +50,9 @@ Route::get('/product/{product}/edit_image_color', 'DetailController@edit')->name
 
 // edit image and color
 Route::patch('/product/detail/{product}', 'DetailController@update')->name('detail.update');
+
+// confirm delete
+Route::get('/product/delete/{product}', 'DeleteProductController@index')->name('productdelete.index');
+
+//delete product
+Route::post('/product/{product}/delete', 'DeleteProductController@destroy')->name('product.destroy');
