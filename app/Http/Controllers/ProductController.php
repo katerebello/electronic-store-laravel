@@ -27,14 +27,14 @@ class ProductController extends Controller
     {
         // $data = request()->all();
         // dd($data);
-
+        // dd(auth()->user()->adminprofile->product);
         $data = request()->validate([
             'product_name' => 'required',
             'product_description' => 'required',
             'product_price' => ['required', 'integer'],
             'model_no' => ['required', 'integer'],
         ]);
-        auth()->user()->product()->create([
+        auth()->user()->adminprofile->product()->create([
             'product_name' => $data['product_name'],
             'product_description' => $data['product_description'],
             'product_price' => $data['product_price'],
