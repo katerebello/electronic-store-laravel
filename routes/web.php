@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $products = Product::all();
+    return view('welcome',compact('products'));
 });
 
 Auth::routes();
@@ -27,8 +28,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adminprofile/{user}','AdminController@index');
 Route::get('/userprofile/{user}','UserController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/homepage', function(){
+    return view('home');
+});
 
 Route::get('/admindashboard', function(){
     return view('admindashboard');
