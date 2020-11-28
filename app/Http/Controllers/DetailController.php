@@ -19,7 +19,7 @@ class DetailController extends Controller
     // change
     public function index(User $user)
     {  
-        $users_products = auth()->user()->product()->get();
+        $users_products = auth()->user()->adminprofile->product()->get();
         return view('product/all', compact('users_products')); 
     }
 
@@ -27,7 +27,7 @@ class DetailController extends Controller
     {
         // $data = request()->all();
         // dd($data);
-        $product_id = auth()->user()->product()->pluck('id');
+        $product_id = auth()->user()->adminprofile->product()->pluck('id');
         // dd($product_id[0]);
         $store_image = [];
         foreach (request('product_image') as $index => $image) 

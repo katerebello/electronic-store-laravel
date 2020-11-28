@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             // fk
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('adminprofile_id');
             $table->string('product_name');
             $table->string('product_description');
             $table->bigInteger('product_price');
@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->timestamps();
 
             // fk
-            $table->index('user_id');
+            $table->index('adminprofile_id');
         });
     }
 

@@ -8,9 +8,9 @@ class Product extends Model
 {
     protected $guarded = [];
 
-    public function user()
+    public function adminprofile()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Adminprofile::class);
     }
 
     public function image()

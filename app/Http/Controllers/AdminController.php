@@ -14,7 +14,8 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
     
-    function index(User $user){
+    function index(User $user)
+    {
         //dd($user);
         return view('adminview',compact('user'));
     }
