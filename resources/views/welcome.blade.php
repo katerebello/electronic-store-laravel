@@ -100,10 +100,10 @@
 											<li class="level-1">-Smartphone & Table</li>
 											<li class="level-2">Batteries & Chargens</li>
 											<li class="level-2">Mp3 Player & Headphones</li>
-											<li class="level-2">Table & Accessories</li>-->
-										</ul>-->
+											<li class="level-2">Table & Accessories</li>
+										</ul>
 										
-									</div>
+									</div>-->
 								</form>
 							</div>
 						</div>
