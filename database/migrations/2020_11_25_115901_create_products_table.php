@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('product_description');
             $table->bigInteger('product_price');
             $table->bigInteger('model_no');
+            $table->string('category');
             $table->timestamps();
 
             // fk

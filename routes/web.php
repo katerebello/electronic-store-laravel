@@ -16,12 +16,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    $products = Product::all();
-    return view('welcome',compact('products'));
-});
+Route::get('/', 'CategoryController@index');
 
 Auth::routes();
+
+Route::get('/category_each',function(){
+    dd(request()->all());
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -74,3 +75,8 @@ Route::get('/product/delete/{product}', 'DeleteProductController@index')->name('
 
 //delete product
 Route::post('/product/{product}/delete', 'DeleteProductController@destroy')->name('product.destroy');
+
+
+Route::get('/{product}/productdeatils',function(Product $product){
+    return view('productdetails',compact('product'));
+});

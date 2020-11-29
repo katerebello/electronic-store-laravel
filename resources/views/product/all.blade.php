@@ -7,6 +7,7 @@
         <div class="col-lg-4">
             <h2>{{ $users_product->product_name}}</h2>
             <hr>
+            <b>Category:</b> <p>{{ $users_product->category}}</p>
             @foreach ($users_product->image as $image)
 
             <img src="storage\{{ $image->product_image}}" class="w-25" alt="image">

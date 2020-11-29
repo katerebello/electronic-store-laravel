@@ -60,15 +60,32 @@
 
 						<div class="wrap-search center-section">
 							<div class="wrap-search-form">
-								<form action="#" id="form-search-top" name="form-search-top">
+								<form action="/category_each" id="form-search-top" name="form-search-top">
 									<input type="text" name="search" value="" placeholder="Search here...">
-									<button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+									<button form="form-search-top" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+
 									<div class="wrap-list-cate">
+										<select name="category" id="" >
+											<option value="smartphones" class="">smartphones</option>
+											<option value="Washing Machine" class="">Washing machines</option>
+											<option value="Laptops" class="">Laptops</option>
+											<option value="Cameras" class="">Cameras</option>
+										</select>
+									</div>
+									
+
+									<!--<div class="wrap-list-cate">
 										<input type="hidden" name="product-cate" value="0" id="product-cate">
 										<a href="#" class="link-control">All Category</a>
 										<ul class="list-cate">
 											<li class="level-0">All Category</li>
 											<li class="level-1">-Electronics</li>
+											<li class="level-2">-SmartPhones</li>
+											<li class="level-2">-Laptops</li>
+											<li class="level-2">-Washing Machines</li>
+											<li class="level-2">-Cameras</li>
+
+
 											<li class="level-2">Batteries & Chargers</li>
 											<li class="level-2">Headphone & Headsets</li>
 											<li class="level-2">Mp3 Player & Acessories</li>
@@ -83,8 +100,9 @@
 											<li class="level-1">-Smartphone & Table</li>
 											<li class="level-2">Batteries & Chargens</li>
 											<li class="level-2">Mp3 Player & Headphones</li>
-											<li class="level-2">Table & Accessories</li>
-										</ul>
+											<li class="level-2">Table & Accessories</li>-->
+										</ul>-->
+										
 									</div>
 								</form>
 							</div>
@@ -311,7 +329,9 @@
 									<div class="product product-style-2 equal-elem ">
 
 										<div class="product-thumnail">
-			 								<img src="storage\{{($product->image)[0]->product_image }}" alt="image">
+											 <!--first image-->
+			 								<a href="/{{$product->id}}/productdetails"> <img src="storage\{{($product->image)[0]->product_image }}" alt="image"></a>
+											
 
 											<div class="group-flash">
 												<span class="flash-item new-label">new</span>
@@ -325,21 +345,20 @@
 											<div class="wrap-price"><span class="product-price">${{ $product->product_price }}</span></div>
 										</div>
 									</div>
-									@endforeach
-
-
-									
+								@endforeach
 								</div>
 							</div>
 
-
+							<!--smartphones-->
 							<div class="tab-content-item" id="fashion_1a">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
-
+									@foreach($smartphones as $smartphone)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										<a href="/{{$product->id}}/productdetails"title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure>
+												 <img src="storage\{{($smartphone->image)[0]->product_image }}" alt="image">
+												</figure>
 											</a>
 											<div class="group-flash">
 												<span class="flash-item new-label">new</span>
@@ -349,10 +368,11 @@
 											</div>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Lois Caron LCS-4027 Analog Watch - For Men</span></a>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+											<a href="#" class="product-name"><span>{{$smartphone->product_name}}</span></a>
+											<div class="wrap-price"><span class="product-price">${{$smartphone->product_price}}</span></div>
 										</div>
 									</div>
+									@endforeach
 
 									
 								</div>
@@ -360,11 +380,13 @@
 
 							<div class="tab-content-item" id="fashion_1b">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
+									@foreach($washingmachines as $washingmachine)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											<a href="/{{$product->id}}/productdetails"title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure>
+												 <img src="storage\{{($washingmachine->image)[0]->product_image }}" alt="image">
+												</figure>
 											</a>
 											<div class="group-flash">
 												<span class="flash-item bestseller-label">Bestseller</span>
@@ -374,22 +396,23 @@
 											</div>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<a href="#" class="product-name"><span>{{ $washingmachine->product_name}}</span></a>
 											<div class="wrap-price"><span class="product-price">$250.00</span></div>
 										</div>
 									</div>
-
-									
+									@endforeach
 								</div>
 							</div>
 
 							<div class="tab-content-item" id="fashion_1c">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
+									@foreach($laptops as $laptop)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											<a href="/{{$product->id}}/productdetails"title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure>
+													<img src="storage\{{($laptop->image)[0]->product_image }}" alt="image">
+												</figure>
 											</a>
 											<div class="group-flash">
 												<span class="flash-item new-label">new</span>
@@ -399,29 +422,31 @@
 											</div>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+											<a href="#" class="product-name"><span>{{ $laptop->product_name }}</span></a>
+											<div class="wrap-price"><span class="product-price">${{ $laptop->product_price}}</span></div>
 										</div>
 									</div>
-
-									
+									@endforeach
 								</div>
 							</div>
 
 							<div class="tab-content-item" id="fashion_1d">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
+									@foreach($cameras as $camera)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											<a href="/{{$product->id}}/productdetails"title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure>
+													<img src="storage\{{($camera->image)[0]->product_image }}" alt="image">
+												</figure>
 											</a>
+
 											<div class="wrap-btn">
 												<a href="#" class="function-link">quick view</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<a href="#" class="product-name"><span>{{ $camera->product_name}}</span></a>
 											<div class="product-rating">
 												<i class="fa fa-star" aria-hidden="true"></i>
 												<i class="fa fa-star" aria-hidden="true"></i>
@@ -429,12 +454,10 @@
 												<i class="fa fa-star" aria-hidden="true"></i>
 												<i class="fa fa-star" aria-hidden="true"></i>
 											</div>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+											<div class="wrap-price"><span class="product-price">${{ $camera->product_price}}</span></div>
 										</div>
 									</div>
-
-									
-
+									@endforeach
 								</div>
 							</div>
 						</div>
