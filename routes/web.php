@@ -16,19 +16,22 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CategoryController@index');
 
 Auth::routes();
+
+Route::get('/category_each',function(){
+    dd(request()->all());
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/adminprofile/{user}','AdminController@index');
 Route::get('/userprofile/{user}','UserController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/homepage', function(){
+    return view('home');
+});
 
 Route::get('/admindashboard', function(){
     return view('admindashboard');
@@ -72,3 +75,10 @@ Route::get('/product/delete/{product}', 'DeleteProductController@index')->name('
 
 //delete product
 Route::post('/product/{product}/delete', 'DeleteProductController@destroy')->name('product.destroy');
+
+
+// Route::get('/{product}/productdetails',function(Product $product){
+//     return view('product/productdetails',compact('product'));
+// });
+
+Route::get('/{product}/productdetails','DetailController@detail');

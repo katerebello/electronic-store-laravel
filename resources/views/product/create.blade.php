@@ -12,6 +12,27 @@
                     <h3 class="pt-4 ml-3 h3" style="font-weight: bold;">ADD NEW product</h3>
                 </div>
 
+                <!--product-category-->
+                <div class="form-group row">
+                    <label for="category" class="col-md-4 col-form-label ">Product category</label>
+
+                    <select id="category" class="ml-3 form-control @error('category')
+                    is-invalid @enderror" name="category" category="category" value="{{ old('category') }}" 
+                    autocomplete="category" autofocus required>
+                        <option value="" selected="true" disabled="disabled">Select an Option</option>
+                        <option value="Smartphones">SmartPhones</option>
+                        <option value="Washingmachines">WashingMachines</option>
+                        <option value="Laptops">Laptops</option>
+                        <option value="cameras">Cameras</option>
+                    </select>
+
+                    @error('category')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+
                 <div class="form-group row">
                     <label for="product_name" class="col-md-4 col-form-label ">Product Name</label>
 

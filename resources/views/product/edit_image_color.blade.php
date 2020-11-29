@@ -16,7 +16,7 @@
                 <div class="form-group row">
                     <label for="product_image" class="col-md-4 col-form-label ">Product Image</label>
                     <input type="file" class="ml-3 form-control-file" id="product_image" 
-                    name="product_image[]"  multiple >
+                    name="product_image[]"  multiple>
 
                     @error('product_image')
                     <strong>{{ $message }}</strong>

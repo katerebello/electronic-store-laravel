@@ -33,12 +33,14 @@ class ProductController extends Controller
             'product_description' => 'required',
             'product_price' => ['required', 'integer'],
             'model_no' => ['required', 'integer'],
+            'category' => 'required',
         ]);
         auth()->user()->adminprofile->product()->create([
             'product_name' => $data['product_name'],
             'product_description' => $data['product_description'],
             'product_price' => $data['product_price'],
             'model_no' => $data['model_no'],
+            'category' => $data['category'],
         ]);
 
         return redirect('/product/add_image_color');
