@@ -28,7 +28,11 @@ Route::get('/adminprofile/{user}','AdminController@index');
 Route::get('/userprofile/{user}','UserController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/add_to_cart','ProductController@addToCart' );
+Route::get('/cartlist', 'ProductController@cartlist');
+Route::get('/removecart/{id}', 'ProductController@removecart');
 
+Route::get('/', 'ProductController@productview');
 
 Route::get('/admindashboard', function(){
     return view('admindashboard');

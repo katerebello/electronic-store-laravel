@@ -12,4 +12,5 @@ class Userprofile extends Model
     { 
         return $this->belongsTo(User::class);
     }
+   
 }

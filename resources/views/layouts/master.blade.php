@@ -2,7 +2,6 @@
 use App\Http\Controllers\ProductController;
 $total=ProductController::cartItem();
 ?>
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -38,7 +37,7 @@ $total=ProductController::cartItem();
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="{{ url('/') }}" class="link-to-home"><img src="images/logo1.jpg" alt="mercado"></a>
+							<a href="index.html" class="link-to-home"><img src="images/logo1.jpg" alt="mercado"></a>
 						</div>
 
 						<div class="wrap-search center-section">
@@ -76,7 +75,7 @@ $total=ProductController::cartItem();
 						<div class="wrap-icon right-section" style="padding-left:50px;">
 							
 							<div class="wrap-icon-section minicart" style="text-align:right;">
-								<a href="/cartlist" class="link-direction">
+								<a href="#" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
 										<span class="index">({{$total}})&nbsp;items</span>
@@ -159,296 +158,12 @@ $total=ProductController::cartItem();
 			</div>
 		</div>
 	</header>
+    <div style="background-color:white;width:100%">
+    <main id="main" >
+    @yield('content')
+    </main></div>
 
-	<main id="main">
-		<div class="container">
-
-			<!--MAIN SLIDE-->
-			<div class="wrap-main-slide">
-				<div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
-					<div class="item-slide">
-						<img src="images/banner1.jpg" alt="" class="img-slide">
-						<div style="text-align: left;" class="slide-info slide-3">
-							<h2 class="f-title">DELL <b>Laptops</b></h2>
-							<span class="subtitle">Home laptops sale </span>
-							<p class="sale-info">Starting from <span class="price">Rs 30,000 </span>only</p>
-							<a href="#" class="btn-link">Shop Now</a>
-						</div>
-					</div>
-					<div class="item-slide">
-						<img src="images/banner3.jpg" alt="" class="img-slide">
-						
-					</div>
-					<div class="item-slide">
-						<img src="images/banner4.jpg" alt="aaa" class="img-slide">
-						<div class="slide-info slide-3">
-							<h2 class="f-title">Unstoppable<br><b>Sound</b></h2>
-							<span class="f-subtitle">JBL waterproof portable speakers</span>
-							<br><br>
-							<a href="#" class="btn-link">Shop Now</a>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-
-			<!--strip-->
-			<div class="wrap-footer-content footer-style-1">
-			<div class="wrap-function-info">
-				<div class="container">
-					<ul>
-						<li class="fc-info-item">
-							<i class="fa fa-truck" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Worldwide Delivery</h4>
-								<p class="fc-desc">Delivery all across world </p>
-							</div>
-
-						</li>
-						<li class="fc-info-item">
-							<i class="fa fa-recycle" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Guarantee</h4>
-								<p class="fc-desc">30 Days Money Back warranty</p>
-							</div>
-
-						</li>
-						<li class="fc-info-item">
-							<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Secure Payment</h4>
-								<p class="fc-desc">Safe online payment</p>
-							</div>
-
-						</li>
-						<li class="fc-info-item">
-							<i class="fa fa-life-ring" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Online Suport</h4>
-								<p class="fc-desc">We Have 24/7 online Support </p>
-							</div>
-
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-			<!--On Sale-->
-			<div class="wrap-show-advance-info-box style-1 has-countdown">
-				<h3 class="title-box">On Sale</h3>
-				<div class="wrap-countdown mercado-countdown" data-expire="2020/12/12 12:34:56"></div>
-				<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-					<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-								<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="wrap-price"><span class="product-price">$250.00</span></div>
-							<div><p style="text-align: center"><a  href="#" class="btn btn-primary">Add to Cart</a></p></div>
-						</div>
-					</div>
-
-					
-					
-				</div>
-			</div>
-
-			<!--Latest Products-->
-			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Latest Products</h3>
-				<div class="wrap-top-banner">
-					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="images/digital-electronic-banner.jpg" width="1170" height="240" alt=""></figure>
-					</a>
-				</div>
-				<div class="wrap-products">
-					<div class="wrap-product-tab tab-style-1">						
-						<div class="tab-contents">
-							<div class="tab-content-item active" id="digital_1a">
-								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
-								@if(count($data)>0)
-   									 @foreach($data as $row)
-									<div class="product product-style-2 equal-elem ">
-										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="/storage/{{ $row->image[0]->product_image}}" style="width:150px ;height:150px;" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-											</a>
-											<div class="group-flash">
-												<span class="flash-item new-label">new</span>
-											</div>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>{{$row->product_name}}</span></a>
-											<div class="wrap-price"><span class="product-price">{{$row->product_price}}</span></div>
-											<div><form action="/add_to_cart" method="POST">
-        									@csrf
-        											<input type="hidden" name="products_id" value="{{$row->id}}">
-        											<input type="hidden" name="users_id" value="{{ Auth::user()->id }}">  
-        											<button class="btn btn-primary">Add to Cart</button>
-        											</form></div>
-										</div>
-									</div>
-
-									@endforeach
-                                       @endif
-                                 &nbsp;
-
-								</div>
-							</div>							
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!--Product Categories-->
-			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Product Categories</h3>
-				<div class="wrap-top-banner">
-					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="images/banner7.jpg" width="1170" height="240" alt=""></figure>
-					</a>
-				</div>
-				<div class="wrap-products">
-					<div class="wrap-product-tab tab-style-1">
-						<div class="tab-control">
-							<a href="#fashion_1a" class="tab-control-item active">Smartphone</a>
-							<a href="#fashion_1b" class="tab-control-item">Washing machine</a>
-							<a href="#fashion_1c" class="tab-control-item">Laptop</a>
-							<a href="#fashion_1d" class="tab-control-item">Camera</a>
-						</div>
-						<div class="tab-contents">
-
-							<div class="tab-content-item active" id="fashion_1a">
-								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
-
-									<div class="product product-style-2 equal-elem ">
-										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-											</a>
-											<div class="group-flash">
-												<span class="flash-item new-label">new</span>
-											</div>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>Lois Caron LCS-4027 Analog Watch - For Men</span></a>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
-											<div><p style="text-align: center"><a  href="#" class="btn btn-primary">Add to Cart</a></p></div>
-										</div>
-									</div>
-
-									
-								</div>
-							</div>
-
-							<div class="tab-content-item" id="fashion_1b">
-								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-									<div class="product product-style-2 equal-elem ">
-										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-											</a>
-											<div class="group-flash">
-												<span class="flash-item bestseller-label">Bestseller</span>
-											</div>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
-											<div><p style="text-align: center"><a  href="#" class="btn btn-primary">Add to Cart</a></p></div>
-										</div>
-									</div>
-
-									
-								</div>
-							</div>
-
-							<div class="tab-content-item" id="fashion_1c">
-								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-									<div class="product product-style-2 equal-elem ">
-										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-											</a>
-											<div class="group-flash">
-												<span class="flash-item new-label">new</span>
-											</div>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
-											<div><p style="text-align: center"><a  href="#" class="btn btn-primary">Add to Cart</a></p></div>
-										</div>
-									</div>
-
-									
-								</div>
-							</div>
-
-							<div class="tab-content-item" id="fashion_1d">
-								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-									<div class="product product-style-2 equal-elem ">
-										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-											</a>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-											<div class="product-rating">
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-											</div>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
-											<div><p style="text-align: center"><a  href="#" class="btn btn-primary">Add to Cart</a></p></div>
-										</div>
-									</div>
-
-									
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>			
-
-		</div>
-
-	</main>
-
-	<footer id="footer" style="background-color: #f3b73e;">
+    <footer id="footer" style="background-color: #f3b73e;">
 		<div class="wrap-footer-content footer-style-1">
 
 			

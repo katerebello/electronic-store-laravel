@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Product;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -16,12 +17,14 @@ class UserController extends Controller
         return view('userview');
     }
     
+        
     function store(request $request){
+        $data = Product::all();
         auth()->user()->userprofile()->create([
             'username'=> $request->name,
             'email'=> $request->email,
             'phone_no' => $request->phone_no,
             ]);
-        return view('welcome');
+        return view('welcome')->with('data',$data); 
     }
 }

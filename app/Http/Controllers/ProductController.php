@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Image;
 use App\Product;
+use App\Color;
 use Illuminate\Http\Request;
-
-
+use Session;
+use App\Cart;
+use DB;
 
 class ProductController extends Controller
 {
@@ -70,6 +74,46 @@ class ProductController extends Controller
 
         return redirect("/product/" . $product->id  . "/edit_image_color");
     }
-
+    public function productview(Request $request){
     
+    $data = Product::all();
+    return view('welcome')->with('data',$data); 
+    }
+    public function addToCart(Request $request){
+  
+ 
+        $cart = new Cart;
+        $cart->users_id = $request->input('users_id');
+        $cart->products_id = $request->input('products_id');
+        $cart->qty=1;
+        
+        $cart->save();
+        return redirect('/');
+    }
+    static function cartItem()
+   {
+    $userId=auth()->user()->id;
+    return Cart::where('users_id',$userId)->count();
+  }
+  static function cartview(){
+    
+    return Product::all();
+  }
+   public function cartlist(){
+    $userId=auth()->user()->id;
+   
+    $products= DB::table('cart')
+   ->join('products','cart.products_id','=','products.id')
+   
+   ->where('cart.users_id',$userId)
+   ->select('products.*','cart.id as cart_id')
+   ->get();
+ 
+   return view('cartlist',['products'=>$products]);
+   }
+static function removecart($id){
+  $cart = Cart::findOrFail($id);
+  $cart->delete();
+ return redirect('cartlist')->with('info','Product removed from cart Successfully.');;
+}
 }
