@@ -77,6 +77,10 @@ Route::get('/product/delete/{product}', 'DeleteProductController@index')->name('
 Route::post('/product/{product}/delete', 'DeleteProductController@destroy')->name('product.destroy');
 
 
-Route::get('/{product}/productdeatils',function(Product $product){
-    return view('productdetails',compact('product'));
-});
+// Route::get('/{product}/productdetails',function(Product $product){
+//     return view('product/productdetails',compact('product'));
+// });
+
+Route::get('/{product}/productdetails','DetailController@detail');
+
+Route::get('/category','CategoryController@show');

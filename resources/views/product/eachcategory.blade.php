@@ -1,27 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-@forelse($users_products as $users_product)
+<div class="text-center">
+    Search For <b>" {{ $category }} "</b> 
+</div>
+@forelse($products as $product)
     <div class="container">
         <div class="row p-3 m-3" style="border: 1px solid black;">
             <div class="col-lg-4">
-                <h2>{{ $users_product->product_name}}</h2>
+                <h2>{{ $product->product_name}}</h2>
                 <hr>
                 <b>Category:</b>
-                <p>{{ $users_product->category}}</p>
-                @foreach ($users_product->image as $image)
+                <p>{{ $product->category}}</p>
+                @foreach ($product->image as $image)
                     <img src="storage/{{ $image->product_image}}" class="w-25" alt="image">
                 @endforeach
             </div>
 
             <div class="col-lg-4">
-                <a href="/product/{{$users_product->id}}/edit"><button>EDIT</button> </a>
-                <a href="/product/delete/{{$users_product->id}}"><button>DELETE</button> </a>
+                <a href="/product/{{$product->id}}/edit"><button>EDIT</button> </a>
+                <a href="/product/delete/{{$product->id}}"><button>DELETE</button> </a>
             </div>
 
             <div class="col-lg-4">
                 <h2>Available in :</h2>
-                @foreach ($users_product->color as $color)
+                @foreach ($product->color as $color)
                 <span>{{$color->color}}</span>
                 @endforeach
 
