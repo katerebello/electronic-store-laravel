@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Product;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -16,7 +17,8 @@ class UserController extends Controller
         return view('userview');
     }
     
-    function store(request $request){
+        
+   public function store(request $request){
         $data = request()->validate([
             'name' => ['required'],
             'email' => ['required','email'],
@@ -27,6 +29,6 @@ class UserController extends Controller
             'email'=> $data['email'],
             'phone_no' => $data['phone_no'],
             ]);
-        return view('welcome');
+        return view('welcome')->with('data',$data); 
     }
 }

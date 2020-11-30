@@ -30,7 +30,7 @@ class HomeController extends Controller
             $has_user = userprofile::where('user_id','=',Auth()->User()->id)->count();
             //checks if user is already a user
             if($has_user !=0){
-                return redirect('homepage');
+                return redirect('/');
             }
             return redirect('userprofile/'. Auth()->User()->id);
         }

@@ -29,6 +29,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adminprofile/{user}','AdminController@index');
 Route::get('/userprofile/{user}','UserController@index');
 
+
+Route::post('/add_to_cart','ProductController@addToCart' );
+Route::get('/cartlist', 'ProductController@cartlist');
+Route::get('/removecart/{id}', 'ProductController@removecart');
+
+
 Route::get('/homepage', function(){
     return view('home');
 });
