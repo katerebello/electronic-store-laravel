@@ -90,3 +90,5 @@ Route::post('/product/{product}/delete', 'DeleteProductController@destroy')->nam
 Route::get('/{product}/productdetails','DetailController@detail');
 
 Route::get('/category','CategoryController@show');
+
+

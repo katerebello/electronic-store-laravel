@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\ProductController;
 
 use App\Product;
 use Illuminate\Http\Request;
@@ -8,13 +9,14 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
+        $total=ProductController::cartItem();
         $products = Product::all();
         $smartphones = Product::where('category',"=",'Smartphones')->get();
         $washingmachines = Product::where('category',"=",'Washingmachines')->get();
         $mobiles = Product::where('category',"=",'Mobiles')->get();
         $cameras = Product::where('category',"=",'cameras')->get();
         $laptops = Product::where('category',"=",'laptops')->get();
-        return view('welcome',compact('products','smartphones','washingmachines','laptops','cameras'));
+        return view('welcome',compact('products','smartphones','washingmachines','laptops','cameras','total'));
     }
 
     public function show(){

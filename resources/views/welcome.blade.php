@@ -1,7 +1,4 @@
-<?php
-use App\Http\Controllers\ProductController;
-$total=ProductController::cartItem();
-?>
+
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -13,7 +10,8 @@ $total=ProductController::cartItem();
 	<title>Laravel</title>
 
 	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+	<link href="
+	https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
