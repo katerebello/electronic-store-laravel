@@ -1,7 +1,4 @@
-<?php
-use App\Http\Controllers\ProductController;
-$total=ProductController::cartItem();
-?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -78,7 +75,7 @@ $total=ProductController::cartItem();
 								<a href="#" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">({{$total}})&nbsp;items</span>
+										<span class="index">({{$total ?? '0'}})&nbsp;items</span>
 										<span class="title">CART</span>
 									</div>
 								</a>

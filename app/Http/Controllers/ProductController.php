@@ -80,21 +80,16 @@ class ProductController extends Controller
     
     public function addToCart(Request $request){
         $cart = new Cart;
-        $cart->users_id = $request->input('users_id');
+        $cart->users_id = auth()->user()->id;
         $cart->products_id = $request->input('products_id');
         $cart->qty=1;
 
         $cart->save();
-        return redirect('/');
+        return redirect('/')->with('info','Product added to cart Successfully.');
     }
-    static function cartItem()
-  {
-   $userId=auth()->user()->id;
-    return Cart::where('users_id',$userId)->count();
-  }
-  static function cartview(){
     
-    return Product::all();
+  static function cartview(){
+        return Product::all();
   }
    public function cartlist(){
     $userId=auth()->user()->id;
@@ -111,6 +106,6 @@ class ProductController extends Controller
 static function removecart($id){
   $cart = Cart::findOrFail($id);
   $cart->delete();
- return redirect('cartlist')->with('info','Product removed from cart Successfully.');;
+ return redirect('cartlist')->with('info','Product removed from cart Successfully.');
 }
 }

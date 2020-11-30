@@ -10,7 +10,7 @@
                 <b>Category:</b>
                 <p>{{ $users_product->category}}</p>
                 @foreach ($users_product->image as $image)
-                    <img src="storage/{{ $image->product_image}}" class="w-25" alt="image">
+                    <img src="../storage/{{ $image->product_image}}" class="w-25" alt="image">
                 @endforeach
             </div>
 
