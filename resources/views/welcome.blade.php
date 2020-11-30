@@ -1,7 +1,4 @@
-<?php
-use App\Http\Controllers\ProductController;
-$total=ProductController::cartItem();
-?>
+
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -82,9 +79,10 @@ $total=ProductController::cartItem();
 								<a href="/cartlist" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">({{$total ?? '0'}})&nbsp;items</span>
+										<span class="index">&nbsp;items</span>
 										<span class="title">CART</span>
 									</div>
+									
 									<div class="wrap-icon-section show-up-after-1024">
 										<a href="#" class="mobile-navigation">
 											<span></span>
@@ -162,7 +160,11 @@ $total=ProductController::cartItem();
 			</div>
 		</div>
 	</header>
-
+	@if (session('info'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('info') }}
+                        </div>
+                    @endif
 	<main id="main">
 		<div class="container">
 
@@ -193,6 +195,7 @@ $total=ProductController::cartItem();
 					</div>
 				</div>
 			</div>
+			
 			
 			<!--strip-->
 			<div class="wrap-footer-content footer-style-1">
@@ -275,7 +278,7 @@ $total=ProductController::cartItem();
 						<div class="tab-contents">
 							<div class="tab-content-item active" id="digital_1a">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
-								@if(count($products)>0)
+								
    									 @foreach($products as $product)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
@@ -295,7 +298,6 @@ $total=ProductController::cartItem();
 												<div><form action="/add_to_cart" method="POST">
 												@csrf
 														<input type="hidden" name="products_id" value="{{$product->id}}">
-														<input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
 														<button class="btn btn-primary">Add to Cart</button>
 														</form>
 												</div>
@@ -303,7 +305,7 @@ $total=ProductController::cartItem();
 										</div>
 									
 										@endforeach
-                                       @endif
+                                    
 									
 								</div>
 							</div>
@@ -355,7 +357,7 @@ $total=ProductController::cartItem();
 											<div><form action="/add_to_cart" method="POST">
         									@csrf
         											<input type="hidden" name="products_id" value="{{$product->id}}">
-													<input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
+													
         											<button class="btn btn-primary">Add to Cart</button>
         											</form></div>
 										</div>
@@ -389,7 +391,7 @@ $total=ProductController::cartItem();
 										<div><form action="/add_to_cart" method="POST">
         									@csrf
         											<input type="hidden" name="products_id" value="{{$smartphone->id}}">
-        											<input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
+        											
         											<button class="btn btn-primary">Add to Cart</button>
         											</form></div>
 									</div>
@@ -419,7 +421,7 @@ $total=ProductController::cartItem();
 											<div><form action="/add_to_cart" method="POST">
         									@csrf
         											<input type="hidden" name="products_id" value="{{$washingmachine->id}}">
-													<input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
+													
         											<button class="btn btn-primary">Add to Cart</button>
         											</form></p></div>
 										</div>
@@ -454,7 +456,7 @@ $total=ProductController::cartItem();
 										<div><form action="/add_to_cart" method="POST">
         									@csrf
         											<input type="hidden" name="products_id" value="{{$laptop->id}}">
-        										    <input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
+        										    
         											<button class="btn btn-primary">Add to Cart</button>
         											</form></div>
 									</div>
@@ -490,7 +492,7 @@ $total=ProductController::cartItem();
 											<div><form action="/add_to_cart" method="POST">
         									@csrf
         											<input type="hidden" name="products_id" value="{{$camera->id}}">
-													<input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
+													 
         											<button class="btn btn-primary">Add to Cart</button>
         											</form></div>
 										</div>
