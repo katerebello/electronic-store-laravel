@@ -7,8 +7,9 @@ use App\Image;
 use App\Product;
 use App\Color;
 use Illuminate\Http\Request;
-use Session;
+
 use App\Cart;
+use Auth;
 use DB;
 
 class ProductController extends Controller
@@ -37,12 +38,14 @@ class ProductController extends Controller
             'product_description' => 'required',
             'product_price' => ['required', 'integer'],
             'model_no' => ['required', 'integer'],
+            'category' => 'required',
         ]);
         auth()->user()->adminprofile->product()->create([
             'product_name' => $data['product_name'],
             'product_description' => $data['product_description'],
             'product_price' => $data['product_price'],
             'model_no' => $data['model_no'],
+            'category' => $data['category'],
         ]);
 
         return redirect('/product/add_image_color');
@@ -74,25 +77,19 @@ class ProductController extends Controller
 
         return redirect("/product/" . $product->id  . "/edit_image_color");
     }
-    public function productview(Request $request){
     
-    $data = Product::all();
-    return view('welcome')->with('data',$data); 
-    }
     public function addToCart(Request $request){
-  
- 
         $cart = new Cart;
         $cart->users_id = $request->input('users_id');
         $cart->products_id = $request->input('products_id');
         $cart->qty=1;
-        
+
         $cart->save();
         return redirect('/');
     }
     static function cartItem()
-   {
-    $userId=auth()->user()->id;
+  {
+   $userId=auth()->user()->id;
     return Cart::where('users_id',$userId)->count();
   }
   static function cartview(){

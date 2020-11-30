@@ -18,12 +18,16 @@ class UserController extends Controller
     }
     
         
-    function store(request $request){
-        $data = Product::all();
+   public function store(request $request){
+        $data = request()->validate([
+            'name' => ['required'],
+            'email' => ['required','email'],
+            'phone_no' => ['required', 'digits:10'],
+        ]);
         auth()->user()->userprofile()->create([
-            'username'=> $request->name,
-            'email'=> $request->email,
-            'phone_no' => $request->phone_no,
+            'username'=> $data['name'],
+            'email'=> $data['email'],
+            'phone_no' => $data['phone_no'],
             ]);
         return view('welcome')->with('data',$data); 
     }

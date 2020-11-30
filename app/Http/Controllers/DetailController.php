@@ -96,4 +96,8 @@ class DetailController extends Controller
         }
         return redirect("/all");
     }
+    public function detail(Product $product)
+    {
+        return view('product/productdetails', compact('product')); 
+    }
 }
