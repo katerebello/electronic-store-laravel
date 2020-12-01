@@ -75,7 +75,7 @@
 								<a href="#" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">({{$total ?? '0'}})&nbsp;items</span>
+										<span class="index">&nbsp;items</span>
 										<span class="title">CART</span>
 									</div>
 								</a>
@@ -143,7 +143,7 @@
 									<a href="{{ url('/cartlist') }}" class="link-term mercado-item-title">Cart</a>
 								</li>
 								<li class="menu-item">
-									<a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
+									<a href="{{ url('/myorders') }}" class="link-term mercado-item-title">Orders</a>
 								</li>
 								<li class="menu-item">
 									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>

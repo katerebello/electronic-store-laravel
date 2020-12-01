@@ -19,16 +19,13 @@ $data=ProductController::cartview();
 <div class="custom product">
 <div class="col-sm-10">
 <div class="trending-wrapper">
-@if(count($products)==0)
 
-<h1 style="text-align:center">Cart Is empty</h1><br><br><br>
-@else
-<h1 style="text-align:center"><b>Your Cart</b></h1><br>
-<a href="ordernow" class="btn btn-success">Order Now</a><br><br>
-@foreach($products as $item)
+<h1 style="text-align:center"><b>Orders</b></h1><br>
+
+@foreach($orders as $item)
 
 <div class="row searched-item " style="margin-bottom:20px; border-bottom:1px solid #ccc;padding-bottom:20px">
-    <div class="col-sm-3">
+    <div class="col-sm-4">
     @if(count($data)>0)
    	@foreach($data as $row)
        @if($row->id == $item->id)
@@ -38,28 +35,26 @@ $data=ProductController::cartview();
         @endforeach
          @endif
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <div>
             <br>
             <h2>{{$item->product_name}}</h2>
-          
+            <h4>{{$item->product_description}}</h4>
         </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <div>
-            <br><br>
-            <input type="number" name="quantity" value="1">
-            <h5>Rs.{{$item->product_price}}</h5>
+        <h4>Delivery Status : {{$item->status}}</h4>
+        <h4>Address : {{$item->address}}</h4>
+        <h4>Payment Status : {{$item->payment_status}}</h4>
+        <h4>Payment Method : {{$item->payment_method}}</h4> 
         </div>
     </div>
-    <div class="col-sm-3">
-        <br>
-        <a href="/removecart/{{$item->cart_id}}"> <button class="btn btn-danger" > Remove from Cart</button></a>
-    </div>
+    
 </div>
 @endforeach
-<a href="ordernow" class="btn btn-success">Order Now</a>
-@endif
+
+
 </div>
 </div>
 </div>
