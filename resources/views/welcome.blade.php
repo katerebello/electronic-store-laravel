@@ -10,7 +10,8 @@
 	<title>Laravel</title>
 
 	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+	<link href="
+	https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
@@ -41,7 +42,7 @@
 									<a href="{{ url('/') }}" class="link-to-home"><img src="images/logo1.jpg" alt="mercado"></a>
 								</div>
 
-								<div class="wrap-search center-section">
+								<!--<div class="wrap-search center-section">
 									<div class="wrap-search-form">
 										<form action="#" id="form-search-top" name="form-search-top">
 											<input type="text" name="search" value="" placeholder="Search here...">
@@ -69,6 +70,21 @@
 													<li class="level-2">Table & Accessories</li>
 												</ul>
 											</div>
+										</form>
+									</div>
+								</div>-->
+								<div class="center-section " style=""> 
+									<div class="box">
+										<form action="\category" id="search-form">
+											<input type="text" id="inputsearch" placeholder="search..">
+											<select name="category" id="">
+												<option value="" >All Category</option>
+												<option value="Smartphones">Smartphones</option>
+												<option value="Washingmachines">WashingMachines</option>
+												<option value="Laptops">Laptops</option>
+												<option value="Cameras">Cameras</option>
+											</select>
+											<button form="search-form" class="search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 										</form>
 									</div>
 								</div>
@@ -396,11 +412,13 @@
         											</form></div>
 									</div>
 									@endforeach
-
+								</div>
+							</div>
 
 							<div class="tab-content-item" id="fashion_1b">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 									@foreach($washingmachines as $washingmachine)
+
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
 											<a href="/{{$product->id}}/productdetails"title="T-Shirt Raw Hem Organic Boro Constrast Denim">

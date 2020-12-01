@@ -94,3 +94,7 @@ Route::get('/{product}/productdetails','DetailController@detail');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/category','CategoryController@show');
+
+
