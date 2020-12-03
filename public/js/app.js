@@ -65914,3 +65914,4 @@ module.exports = __webpack_require__(/*! C:\Users\Kate\Documents\electronic-stor
 /***/ })
 
 /******/ });
+

@@ -29,6 +29,7 @@ class UserController extends Controller
             'email'=> $data['email'],
             'phone_no' => $data['phone_no'],
             ]);
-        return view('welcome')->with('data',$data); 
+        return redirect('/');
+        //return view('welcome')->with('data',$data); 
     }
 }
