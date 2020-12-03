@@ -346,7 +346,8 @@
                                                     <span class="flash-item new-label">new</span>
                                                 </div>
                                                 <div class="wrap-btn">
-                                                    <a href="#" class="function-link">quick view</a>
+                                                    <a href="/{{$product->id}}/productdetails"
+                                                        class="function-link">quick view</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
@@ -430,7 +431,8 @@
                                                     <span class="flash-item bestseller-label">Bestseller</span>
                                                 </div>
                                                 <div class="wrap-btn">
-                                                    <a href="#" class="function-link">quick view</a>
+                                                    <a href="/{{$washingmachine->id}}/productdetails"
+                                                        class="function-link">quick view</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
@@ -471,7 +473,8 @@
                                                     <span class="flash-item new-label">new</span>
                                                 </div>
                                                 <div class="wrap-btn">
-                                                    <a href="#" class="function-link">quick view</a>
+                                                    <a href="/{{$laptop->id}}/productdetails"
+                                                        class="function-link">quick view</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
@@ -483,7 +486,8 @@
                                                 <div>
                                                     <form action="/add_to_cart" method="POST">
                                                         @csrf
-                                                        <input type="hidden" name="products_id" value="{{$pro->id}}">
+                                                        <input type="hidden" name="products_id"
+                                                            value="{{$product->id}}">
                                                         <button class="btn btn-primary">Add to Cart</button>
                                                     </form>
                                                 </div>
@@ -516,7 +520,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <a href="#"
+                                                <a href="/{{$camera->id}}/productdetails"
                                                     class="product-name"><span>{{ $camera->product_name}}</span></a>
                                                 <div class="wrap-price"><span
                                                         class="product-price">${{ $camera->product_price }}</span>
