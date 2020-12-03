@@ -1,31 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-
-<h2>ADMINDASHBOARD!!</h2>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <p> WELCOME TO CSK-Estore {{Auth::user()->name}}</p>  
-            <div class="card">
-                <div class="card-header">{{ __('Home page') }}</div>
+            <h1 class="bg-dark text-light text-center"> WELCOME {{Auth::user()->name}} !</h1>
+            <div class="card text-center " style="width:100%">
+                <div class="card-header">AdminDashBoard</div>
 
+                <img class="card-img-top" src="images/admindashboard/allproducts.png" alt="Card image"
+                    style="width:100%">
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                
-                    @if ( Auth::user()->role  == 'admin' )
-                        <h1> You are logged in as admin!</h1>
-                        <a href="/product/create">Add Products</a><br>
-                        <a href="/all">See your products</a>
-                    @else
-                        <h1> You are logged in as user!</h1>
-                    @endif 
-
+                    <a href="/all" class="btn btn-outline-dark btn-primary mr-5">See You Products</a>
+                    <a href="/product/create" class="btn btn-outline-dark btn-primary mr-5">Add Products</a>
                 </div>
             </div>
         </div>
