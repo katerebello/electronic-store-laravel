@@ -35,9 +35,6 @@
     <header id="header" class="header header-style-1">
         <div class="container-fluid">
             <div class="row">
-
-
-
                 <div class="container">
                     <div class="mid-section main-info-area">
 
@@ -349,8 +346,7 @@
                                                     <span class="flash-item new-label">new</span>
                                                 </div>
                                                 <div class="wrap-btn">
-                                                    <a href="/{{$product->id}}/productdetails"
-                                                        class="function-link">quick view</a>
+                                                    <a href="#" class="function-link">quick view</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
@@ -434,8 +430,7 @@
                                                     <span class="flash-item bestseller-label">Bestseller</span>
                                                 </div>
                                                 <div class="wrap-btn">
-                                                    <a href="/{{$washingmachine->id}}/productdetails"
-                                                        class="function-link">quick view</a>
+                                                    <a href="#" class="function-link">quick view</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
@@ -467,7 +462,7 @@
 
                                             <div class="product-thumnail">
                                                 <!--first image-->
-                                                <a href="/{{$product->id}}/productdetails"> <img
+                                                <a href="/{{$laptop->id}}/productdetails"> <img
                                                         src="storage\{{($laptop->image)[0]->product_image }}"
                                                         alt="image"></a>
 
@@ -476,8 +471,7 @@
                                                     <span class="flash-item new-label">new</span>
                                                 </div>
                                                 <div class="wrap-btn">
-                                                    <a href="/{{$laptop->id}}/productdetails"
-                                                        class="function-link">quick view</a>
+                                                    <a href="#" class="function-link">quick view</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
@@ -489,8 +483,7 @@
                                                 <div>
                                                     <form action="/add_to_cart" method="POST">
                                                         @csrf
-                                                        <input type="hidden" name="products_id"
-                                                            value="{{$product->id}}">
+                                                        <input type="hidden" name="products_id" value="{{$pro->id}}">
                                                         <button class="btn btn-primary">Add to Cart</button>
                                                     </form>
                                                 </div>
@@ -519,8 +512,7 @@
                                                     <span class="flash-item new-label">new</span>
                                                 </div>
                                                 <div class="wrap-btn">
-                                                    <a href="/{{$camera->id}}/productdetails"
-                                                        class="function-link">quick view</a>
+                                                    <a href="#" class="function-link">quick view</a>
                                                 </div>
                                             </div>
                                             <div class="product-info">
