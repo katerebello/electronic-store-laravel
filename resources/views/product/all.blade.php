@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<div  style="text-align: center;"> 
+<!-- / link -->
+<a href=""></a>
+<a href="/product/create">Add Products ??</a></div>
 @forelse($users_products as $users_product)
     <div class="container">
         <div class="row p-3 m-3" style="border: 1px solid black;">
