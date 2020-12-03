@@ -88,24 +88,24 @@ class ProductController extends Controller
         return redirect('/')->with('info','Product added to cart Successfully.');
     }
     
-  static function cartview(){
+    static function cartview(){
         return Product::all();
-  }
-   public function cartlist(){
-    $userId=auth()->user()->id;
+    }
+    public function cartlist(){
+        $userId=auth()->user()->id;
    
-    $products= DB::table('cart')
-   ->join('products','cart.products_id','=','products.id')
+        $products= DB::table('cart')
+        ->join('products','cart.products_id','=','products.id')
    
-   ->where('cart.users_id',$userId)
-   ->select('products.*','cart.id as cart_id')
-   ->get();
+        ->where('cart.users_id',$userId)
+        ->select('products.*','cart.id as cart_id')
+        ->get();
  
-   return view('cartlist',['products'=>$products]);
-   }
-static function removecart($id){
-  $cart = Cart::findOrFail($id);
-  $cart->delete();
- return redirect('cartlist')->with('info','Product removed from cart Successfully.');
-}
+        return view('cartlist',['products'=>$products]);
+    }
+    static function removecart($id){
+        $cart = Cart::findOrFail($id);
+        $cart->delete();
+        return redirect('cartlist')->with('info','Product removed from cart Successfully.');
+    }
 }

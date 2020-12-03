@@ -14,7 +14,7 @@ class CategoryController extends Controller
         $mobiles = Product::where('category',"=",'Mobiles')->get();
         $cameras = Product::where('category',"=",'cameras')->get();
         $laptops = Product::where('category',"=",'laptops')->get();
-        return view('welcome',compact('products','smartphones','washingmachines','laptops','cameras','total'));
+        return view('welcome',compact('products','smartphones','washingmachines','laptops','cameras'));
     }
 
     public function show(){
