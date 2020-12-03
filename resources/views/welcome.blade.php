@@ -164,7 +164,7 @@
 									<a href="{{ url('/cartlist') }}" class="link-term mercado-item-title">Cart</a>
 								</li>
 								<li class="menu-item">
-									<a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
+									<a href="{{ url('/myorders') }}" class="link-term mercado-item-title">Orders</a>
 								</li>
 								<li class="menu-item">
 									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
@@ -299,7 +299,7 @@
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
 											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="storage\{{($product->image)[0]->product_image }}" style="width:150px ;height:150px;" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+												<figure><img src="storage\{{$product->image[0]->product_image }}" style="width:150px ;height:150px;" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">
 												<span class="flash-item new-label">new</span>

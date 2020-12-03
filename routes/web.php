@@ -30,12 +30,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adminprofile/{user}','AdminController@index');
 Route::get('/userprofile/{user}','UserController@index');
 
-
+//cart
 Route::post('/add_to_cart','ProductController@addToCart' );
 Route::get('/cartlist', 'ProductController@cartlist');
 Route::get('/removecart/{id}', 'ProductController@removecart');
-
-
+//order
+Route::get('/ordernow', 'OrderController@ordernow');
+Route::post('/orderplace', 'OrderController@orderplace');
+Route::get('/myorders', 'OrderController@myorders');
 Route::get('/homepage', function(){
     return view('home');
 });
@@ -89,6 +91,9 @@ Route::post('/product/{product}/delete', 'DeleteProductController@destroy')->nam
 // });
 
 Route::get('/{product}/productdetails','DetailController@detail');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/category','CategoryController@show');
 

@@ -7,7 +7,6 @@ use App\Image;
 use App\Product;
 use App\Color;
 use Illuminate\Http\Request;
-
 use App\Cart;
 use Auth;
 use DB;
@@ -96,7 +95,6 @@ class ProductController extends Controller
    
     $products= DB::table('cart')
    ->join('products','cart.products_id','=','products.id')
-   
    ->where('cart.users_id',$userId)
    ->select('products.*','cart.id as cart_id')
    ->get();
