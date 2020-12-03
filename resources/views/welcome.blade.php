@@ -133,7 +133,7 @@
                                     <a href="{{ url('/cartlist') }}" class="link-term mercado-item-title">Cart</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
+                                    <a href="/myorders" class="link-term mercado-item-title">My orders</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
