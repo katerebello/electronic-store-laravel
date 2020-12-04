@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Image;
 use App\Product;
-use App\Color;
 use Illuminate\Http\Request;
+
 use App\Cart;
-use Auth;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -57,7 +54,7 @@ class ProductController extends Controller
 
         return view('product/edit', compact('product'));
     }
-    
+
     public function update(Product $product)
     {
         // dd($product->image);
@@ -70,42 +67,52 @@ class ProductController extends Controller
             'product_price' => 'required | integer',
             'model_no' => 'required | integer',
         ]);
-        
+
         Product::where('id', $product->id)->update(array_merge($data));
         // auth()->user()->product()->update(array_merge($data));
 
         return redirect("/product/" . $product->id  . "/edit_image_color");
     }
-    
-    public function addToCart(Request $request){
+
+    public function addToCart(Request $request)
+    {
         $cart = new Cart;
         $cart->users_id = auth()->user()->id;
         $cart->products_id = $request->input('products_id');
-        $cart->qty=1;
+        $cart->qty = 1;
 
         $cart->save();
-        return redirect('/')->with('info','Product added to cart Successfully.');
+        return redirect('/')->with('info', 'Product added to cart Successfully.');
     }
-    
-  static function cartview(){
+
+    static function cartview()
+    {
         return Product::all();
-  }
-   public function cartlist(){
-    $userId=auth()->user()->id;
-   
-    $products= DB::table('cart')
-   ->join('products','cart.products_id','=','products.id')
-   ->where('cart.users_id',$userId)
-   ->select('products.*','cart.id as cart_id')
-   ->get();
- 
-   return view('cartlist',['products'=>$products]);
-   }
-static function removecart($id){
-  $cart = Cart::findOrFail($id);
-  $cart->delete();
- return redirect('cartlist')->with('info','Product removed from cart Successfully.');
-}
+    }
+    public function cartlist()
+    {
+        $userId = auth()->user()->id;
+
+        $products = DB::table('cart')
+            ->join('products', 'cart.products_id', '=', 'products.id')
+            ->where('cart.users_id', $userId)
+            ->select('products.*', 'cart.id as cart_id')
+            ->get();
+
+        return view('cartlist', ['products' => $products]);
+    }
+    static function removecart($id)
+    {
+        $cart = Cart::findOrFail($id);
+        $cart->delete();
+        return redirect('cartlist')->with('info', 'Product removed from cart Successfully.');
+    }
+    public function shop()
+    {
+        $products = Product::all();
+        return view('/shop', compact('products')); 
+    }
+
 public function aboutus(){
 return view('aboutus');
 }

@@ -7,17 +7,19 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $products = Product::all();
         $smartphones = Product::where('category',"=",'Smartphones')->get();
         $washingmachines = Product::where('category',"=",'Washingmachines')->get();
         $mobiles = Product::where('category',"=",'Mobiles')->get();
         $cameras = Product::where('category',"=",'cameras')->get();
         $laptops = Product::where('category',"=",'laptops')->get();
-        return view('welcome',compact('products','smartphones','washingmachines','laptops','cameras','total'));
+        return view('welcome',compact('products','smartphones','washingmachines','laptops','cameras'));
     }
 
-    public function show(){
+    public function show()
+    {
         //dd(request()->all());
         //dd(request()->category);
         $category = request()->category;

@@ -42,6 +42,8 @@ Route::get('/myorders', 'OrderController@myorders');
 //aboutus
 Route::get('/aboutus', 'ProductController@aboutus');
 Route::get('/contactus', 'ProductController@contactus');
+//shop
+Route::get('/shop', 'ProductController@shop');
 Route::get('/homepage', function(){
     return view('home');
 });
@@ -71,9 +73,9 @@ Route::post('/product/images_color', 'DetailController@store');
 // all product page
 Route::get('/all', 'DetailController@index');
 
-// will redrect you to the edit form
+// will redrect you to the edit form 
 Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.edit');
-
+ 
 // edit product
 Route::patch('/product/{product}', 'ProductController@update')->name('product.update');
 

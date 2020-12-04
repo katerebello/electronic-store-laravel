@@ -7,7 +7,6 @@ use App\User;
 use App\Image;
 use App\Product;
 use App\Color;
-use Illuminate\Support\Facades\DB;
 
 class DetailController extends Controller
 {
