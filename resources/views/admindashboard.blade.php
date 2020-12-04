@@ -11,7 +11,7 @@
                 <img class="card-img-top" src="images/admindashboard/allproducts.png" alt="Card image"
                     style="width:100%">
                 <div class="card-body">
-                    <a href="/all" class="btn btn-outline-dark btn-primary mr-5">See You Products</a>
+                    <a href="/all" class="btn btn-outline-dark btn-primary mr-5">See Your Products</a>
                     <a href="/product/create" class="btn btn-outline-dark btn-primary mr-5">Add Products</a>
                 </div>
             </div>

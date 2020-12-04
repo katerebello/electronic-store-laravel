@@ -20,8 +20,9 @@
                         <label for="product_name" class="col-md-4 col-form-label ">Product Name</label>
 
                         <input id="product_name" type="text" class="ml-3 form-control @error('product_name')
-                        is-invalid @enderror" name="product_name" product_name="product_name" 
-                        value="{{ old('product_name') ?? $product->product_name }} " autocomplete="product_name" autofocus>
+                        is-invalid @enderror" name="product_name" product_name="product_name"
+                            value="{{ old('product_name') ?? $product->product_name }} " autocomplete="product_name"
+                            autofocus>
 
                         @error('product_name')
                         <span class="invalid-feedback" role="alert">
@@ -35,8 +36,9 @@
                         <label for="product_description" class="col-md-4 col-form-label ">Product Desc</label>
 
                         <input id="product_description" type="text" class="ml-3 form-control @error('product_description')
-                         is-invalid @enderror" name="product_description" product_description="product_description" 
-                         value="{{ old('product_description') ?? $product->product_description }}" autocomplete="product_description" autofocus>
+                         is-invalid @enderror" name="product_description" product_description="product_description"
+                            value="{{ old('product_description') ?? $product->product_description }}"
+                            autocomplete="product_description" autofocus>
 
                         @error('product_description')
                         <span class="invalid-feedback" role="alert">
@@ -52,7 +54,8 @@
 
                         <input id="product_price" type="text" class="ml-3 form-control @error('product_price')
                         is-invalid @enderror" name="product_price" product_price="product_price"
-                        value="{{ old('product_price') ?? $product->product_price }}" autocomplete="product_price" autofocus>
+                            value="{{ old('product_price') ?? $product->product_price }}" autocomplete="product_price"
+                            autofocus>
 
                         @error('product_price')
                         <span class="invalid-feedback" role="alert">
@@ -66,7 +69,7 @@
 
                         <input id="model_no" type="text" class="ml-3 form-control @error('model_no')
                         is-invalid @enderror" name="model_no" model_no="model_no"
-                         value="{{ old('model_no') ?? $product->model_no }}" autocomplete="model_no" autofocus>
+                            value="{{ old('model_no') ?? $product->model_no }}" autocomplete="model_no" autofocus>
 
                         @error('model_no')
                         <span class="invalid-feedback" role="alert">
@@ -76,14 +79,14 @@
                     </div>
 
                 </div>
-                
+
             </div>
             <div class="row pt-4 offset-3">
-                    <button class="ml-3 btn btn-primary">Add</button>
-                </div>
-            
+                <button class="ml-3 btn btn-outline-dark btn-primary">Add</button>
+            </div>
+
         </div>
-        
+
     </form>
 </div>
 @endsection
