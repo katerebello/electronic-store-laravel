@@ -168,7 +168,7 @@
                                             aria-hidden="true"></i></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+                                    <a href="{{ url('/aboutus') }}" class="link-term mercado-item-title">About Us</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="{{ url('/shop') }}" class="link-term mercado-item-title">Shop</a>
@@ -180,7 +180,8 @@
                                     <a href="{{ url('/myorders') }}" class="link-term mercado-item-title">Orders</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#footer" class="link-term mercado-item-title">Contact Us</a>
+                                    <a href="{{ url('/contactus') }}" class="link-term mercado-item-title">Contact
+                                        Us</a>
                                 </li>
                             </ul>
                         </div>

@@ -112,4 +112,11 @@ class ProductController extends Controller
         $products = Product::all();
         return view('/shop', compact('products')); 
     }
+
+public function aboutus(){
+return view('aboutus');
+}
+public function contactus(){
+    return view('contactus');
+    }
 }

@@ -39,7 +39,7 @@ $data=ProductController::cartview();
         <div>
             <br>
             <h2>{{$item->product_name}}</h2>
-            <h4>{{$item->product_description}}</h4>
+            
         </div>
     </div>
     <div class="col-sm-4">

@@ -144,7 +144,7 @@
                                             aria-hidden="true"></i></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+                                    <a href="{{ url('/aboutus') }}" class="link-term mercado-item-title">About Us</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="{{ url('/shop') }}" class="link-term mercado-item-title">Shop</a>
@@ -156,7 +156,8 @@
                                     <a href="{{ url('/myorders') }}" class="link-term mercado-item-title">Orders</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#footer" class="link-term mercado-item-title">Contact Us</a>
+                                    <a href="{{ url('/contactus') }}" class="link-term mercado-item-title">Contact
+                                        Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -184,8 +185,9 @@
                                         <ul>
                                             <li>
                                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                                <p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United
-                                                    State USA</p>
+                                                <p class="contact-txt">Unit No. 701 & 702,Wing A, 7th Floor,
+                                                    Kaledonia, Sahar Road, Andheri (East),
+                                                    Mumbai 400069, India</p>
                                             </li>
                                             <li>
                                                 <i class="fa fa-phone" aria-hidden="true"></i>
@@ -193,7 +195,7 @@
                                             </li>
                                             <li>
                                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                <p class="contact-txt">Contact@yourcompany.com</p>
+                                                <p class="contact-txt">Contact@amazedelectronics.com</p>
                                             </li>
                                         </ul>
                                     </div>
