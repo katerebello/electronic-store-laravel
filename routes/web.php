@@ -38,6 +38,10 @@ Route::get('/removecart/{id}', 'ProductController@removecart');
 Route::get('/ordernow', 'OrderController@ordernow');
 Route::post('/orderplace', 'OrderController@orderplace');
 Route::get('/myorders', 'OrderController@myorders');
+
+//aboutus
+Route::get('/aboutus', 'ProductController@aboutus');
+Route::get('/contactus', 'ProductController@contactus');
 Route::get('/homepage', function(){
     return view('home');
 });

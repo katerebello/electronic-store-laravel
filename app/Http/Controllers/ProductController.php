@@ -106,4 +106,10 @@ static function removecart($id){
   $cart->delete();
  return redirect('cartlist')->with('info','Product removed from cart Successfully.');
 }
+public function aboutus(){
+return view('aboutus');
+}
+public function contactus(){
+    return view('contactus');
+    }
 }
