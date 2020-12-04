@@ -18,8 +18,7 @@ $data = ProductController::cartview();
             <div class="col-sm-10">
                 <div class="trending-wrapper">
                     @if(count($products)==0)
-
-                    <h1 style="text-align:center">Cart Is empty</h1><br><br><br>
+                    <h1 style="text-align:center; margin-left:150px;font-weight:bold; font-size:25px">Cart Is empty</h1><br><br><br>
                     @else
                     <h1 style="text-align:center"><b>Your Cart</b></h1><br>
                     <!-- <a href="ordernow" class="btn btn-success">Order Now</a><br><br> -->
