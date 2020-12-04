@@ -1,18 +1,16 @@
 @extends('layouts.app')
-
+@section('title','CSK | Confirm Profile')
 @section('content')
 
-<h1>Welcome To CSK-Estore {{Auth::User()->name}}</h1>
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Your Profile') }}</div>
-
+        <h1 class="bg-dark text-light text-center" style="border-radius: 5px;"> Welcome {{Auth::user()->name}} !</h1>
+            <div class="card text-center">
+                <div class="card-header font-weight-bold">{{ __('Your Profile') }}</div>
                 <div class="card-body">
                     <form method="POST" action="/storeuser">
                         @csrf
-
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -56,9 +54,9 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-2 pl-5">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('confirm Profile') }}
+                                    {{ __('Confirm Profile') }}
                                 </button>
                             </div>
                         </div>

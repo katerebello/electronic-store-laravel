@@ -1,12 +1,13 @@
 @extends('layouts.app')
-
+@section('title','CSK | Your Products')
 @section('content')
 
-<div class="row justify-content-center">
+<div class="container">
+<div class="row justify-content-center mt-5">
     <div class="col-auto">
-        <h1>Your Products:</h1>
-        <table class="table table-responsive" border="1" cellpadding="0" cellspacing="0">
-            <tr>
+        <h2>Your Products:</h2>
+        <table border="1" class="table table-responsive" cellpadding="0" cellspacing="0">
+            <tr class="text-center">
                 <th>Model No</th>
                 <th>Name</th>
                 <th>Category</th>
@@ -16,10 +17,8 @@
                 <th></th>
                 <th></th>
                 <th></th>
-
             </tr>
             @foreach($users_products as $users_product)
-
             <tr>
                 <td>{{$users_product->model_no}}</td>
                 <td>{{$users_product->product_name}}</td>
@@ -35,18 +34,22 @@
                     <img src="../storage/{{ $image->product_image}}" class="w-25" alt="image">
                     @endforeach
                 </td>
-                <td> <a href="/product/{{$users_product->id}}/edit" class="btn btn-outline-dark btn-primary">Edit</a>
+                <td> 
+                    <a href="/product/{{$users_product->id}}/edit" class="btn btn-outline-dark btn-primary">Edit</a>
                 </td>
-                <td> <a href="/product/delete/{{$users_product->id}}" class="btn btn-outline-dark btn-danger">Delete</a>
+                <td> 
+                    <a href="/product/delete/{{$users_product->id}}" class="btn btn-outline-dark btn-danger">Delete</a>
                 </td>
 
-                <td> <a href="{{$users_product->id}}/productdetails"
-                        class="btn btn-outline-dark btn-primary">Details</a> </td>
+                <td> 
+                    <a href="{{$users_product->id}}/productdetails" class="btn btn-outline-dark btn-primary">Details</a> 
+                </td>
             </tr>
             @endforeach
         </table>
         <a href="/product/create" class="float-right btn btn-outline-dark btn-success">Add Products</a>
     </div>
+</div>
 </div>
 
 @endsection

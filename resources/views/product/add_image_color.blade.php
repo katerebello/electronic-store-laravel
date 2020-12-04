@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('title','CSK | Add Details')
 @section('content')
 
-<div class="container card p-5 mt-5">
+<div class="container card p-5 mt-5" style="box-shadow: 1px 1px 5px 2px black;">
     <form action="/product/images_color" enctype="multipart/form-data" method="POST">
 
         @csrf

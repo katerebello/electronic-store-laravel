@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','CSK | Search')
 @section('content')
 <div class="text-center">
     Search For <b>" {{ $category }} "</b>

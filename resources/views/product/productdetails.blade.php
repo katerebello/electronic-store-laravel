@@ -1,5 +1,7 @@
 @extends('layouts.app')
+@section('title','CSK | Product Details')
 @section('content')
+<p hidden>{{ $role =  Auth::user()->role}}</p>  
 <div class="container card mt-5" style=" box-shadow:1px 1px 5px 1px black;">
     <div class="row  p-5">
         <div class="col-lg-5" style="font-size: 17px;">
@@ -25,11 +27,13 @@
             <p>{{ $product_color->color }}</p>
             @endforeach
         </div>
+        @if ( $role == 'user')
         <form action="/add_to_cart" method="POST" class="mt-4 ml-3">
             @csrf
             <input type="hidden" name="products_id" value="{{$product->id}}">
             <button class="btn btn-primary mb-3">Add to Cart</button>
         </form>
+        @endif
     </div>
 </div>
 @endsection

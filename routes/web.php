@@ -21,6 +21,11 @@ Route::get('/', 'CategoryController@index');
 
 Auth::routes();
 
+// mail
+Route::get('/email', function(){
+    return new \App\Mail\NewUserWelcomeMail();
+});
+
 Route::get('/category_each',function(){
     dd(request()->all());
 });

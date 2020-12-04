@@ -1,13 +1,12 @@
 @extends('layouts.app')
+@section('title','CSK | Add Products')
 @section('content')
 
-<div class="container card p-5 mt-5">
+<div class="container card p-5 mt-5 mb-5" style="box-shadow: 1px 1px 5px 2px black;">
     <form action="/product" enctype="multipart/form-data" method="POST">
-
         @csrf
         <div class="row offset-3">
-            <div class="col-8 ">
-
+            <div class="col-8">
                 <div class="row">
                     <h3 class="pt-4 ml-3 h3" style="font-weight: bold;">ADD NEW product</h3>
                 </div>

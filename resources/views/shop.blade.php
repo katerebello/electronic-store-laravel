@@ -1,6 +1,7 @@
 @extends('layouts.master')
-
+@section('title','CSK | Shop')
 @section('content')
+<p hidden>{{ $role =  Auth::user()->role}}</p>  
 <div class="container">
     <div class="row">
         @foreach($products as $product)
@@ -14,11 +15,13 @@
 
                 <a href="/{{$product->id}}/productdetails">
                 <button class="btn btn-success" class="">Details</button></a>
-                <form action="/add_to_cart" method="POST" class="mt-5">
-                    @csrf
-                    <input type="hidden" name="products_id" value="{{$product->id}}">
-                    <button class="btn btn-primary mb-3">Add to Cart</button>
-                </form>
+                @if ( $role == 'user')
+                    <form action="/add_to_cart" method="POST" style="margin-top: 20px;">
+                        @csrf
+                        <input type="hidden" name="products_id" value="{{$product->id}}">
+                        <button class="btn btn-primary mb-3">Add to Cart</button>
+                    </form>
+                @endif
             </div>
         </div>
         @endforeach

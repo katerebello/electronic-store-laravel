@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title','CSK | Cart')
 @section('content')
 <?php
 
@@ -8,7 +8,8 @@ use App\Http\Controllers\ProductController;
 $data = ProductController::cartview();
 ?>
 <main id="main">
-    <div style="background-color:white;width:100%" class="container">
+    <div class="container">
+    <div style="background-color:white;width:100%">
         @if (session('info'))
         <div class="alert alert-success" role="alert">
             {{ session('info') }}
@@ -35,22 +36,14 @@ $data = ProductController::cartview();
                             @endforeach
                             @endif
                         </div>
-                        <div class="col-sm-3">
-                            <div>
-                                <br>
+                        <div class="col-sm-3" style="margin-top:20px;">
                                 <h2>{{$item->product_name}}</h2>
-
-                            </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div>
-                                <br><br>
+                        <div class="col-sm-3" style="margin-top: 45px;">
                                 <input type="number" name="quantity" value="1">
                                 <h5>Rs.{{$item->product_price}}</h5>
-                            </div>
                         </div>
-                        <div class="col-sm-3">
-                            <br>
+                        <div class="col-sm-3" style="margin-top: 40px;">
                             <a href="/removecart/{{$item->cart_id}}"> <button class="btn btn-danger"> Remove from Cart</button></a>
                         </div>
                     </div>
@@ -60,6 +53,7 @@ $data = ProductController::cartview();
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </main>
 @endsection
