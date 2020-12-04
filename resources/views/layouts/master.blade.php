@@ -31,7 +31,7 @@
 
 
     <!--header-->
-    <header id="header" class="header header-style-1">
+    <header id="header" class="header header-style-1 mb-5">
         <div class="container-fluid">
             <div class="row">
 
@@ -42,9 +42,40 @@
                             <a href="index.html" class="link-to-home"><img src="images/logo1.jpg" alt="mercado"></a>
                         </div>
 
+                        <div class="wrap-search center-section">
+                            <div class="wrap-search-form">
+                                <form action="#" id="form-search-top" name="form-search-top">
+                                    <input type="text" name="search" value="" placeholder="Search here...">
+                                    <button form="form-search-top" type="button"><i class="fa fa-search"
+                                            aria-hidden="true"></i></button>
+                                    <div class="wrap-list-cate">
+                                        <input type="hidden" name="product-cate" value="0" id="product-cate">
+                                        <a href="#" class="link-control">All Category</a>
+                                        <ul class="list-cate">
+                                            <li class="level-0">All Category</li>
+                                            <li class="level-1">-Electronics</li>
+                                            <li class="level-2">Batteries & Chargers</li>
+                                            <li class="level-2">Headphone & Headsets</li>
+                                            <li class="level-2">Mp3 Player & Acessories</li>
+                                            <li class="level-1">-Smartphone & Tablets</li>
+                                            <li class="level-2">Batteries & Chargens</li>
+                                            <li class="level-2">Mp3 Player & Headphones</li>
+                                            <li class="level-2">Table & Accessories</li>
+                                            <li class="level-1">-Electronics</li>
+                                            <li class="level-2">Batteries & Chargens</li>
+                                            <li class="level-2">Headphone & Headsets</li>
+                                            <li class="level-2">Mp3 Player & Acessories</li>
+                                            <li class="level-1">-Smartphone & Table</li>
+                                            <li class="level-2">Batteries & Chargens</li>
+                                            <li class="level-2">Mp3 Player & Headphones</li>
+                                            <li class="level-2">Table & Accessories</li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
 
-
-                        <div class="wrap-icon right-section" style="padding-left:500px;">
+                        <div class="wrap-icon right-section" style="padding-left:50px;">
 
                             <div class="wrap-icon-section minicart" style="text-align:right;">
                                 <a href="#" class="link-direction">
@@ -116,7 +147,7 @@
                                     <a href="about-us.html" class="link-term mercado-item-title">About Us</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="shop.html" class="link-term mercado-item-title">Shop</a>
+                                    <a href="{{ url('/shop') }}" class="link-term mercado-item-title">Shop</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="{{ url('/cartlist') }}" class="link-term mercado-item-title">Cart</a>
@@ -125,7 +156,7 @@
                                     <a href="{{ url('/myorders') }}" class="link-term mercado-item-title">Orders</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+                                    <a href="#footer" class="link-term mercado-item-title">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -134,24 +165,17 @@
             </div>
         </div>
     </header>
-    <div style="background-color:white;width:100%">
+    <div style="background-color:white;width:100%;margin-top:100px; margin-bottom:100px;">
         <main id="main">
             @yield('content')
         </main>
     </div>
-
-    <footer id="footer" style="background-color: #f3b73e;">
+    <footer id="footer" style="background-color: #f3b73e;" class="">
         <div class="wrap-footer-content footer-style-1">
-
-
             <!--End function info-->
-
             <div class="main-footer-content">
-
                 <div class="container">
-
                     <div class="row">
-
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                             <div class="wrap-footer-item">
                                 <h3 class="item-header">Contact Details</h3>
@@ -176,9 +200,7 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-
                             <div class="wrap-footer-item">
                                 <h3 class="item-header">Hot Line</h3>
                                 <div class="item-content">
@@ -189,7 +211,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="wrap-footer-item footer-item-second">
                                 <h3 class="item-header">Sign up for newsletter</h3>
                                 <div class="item-content">
@@ -202,9 +223,7 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
                             <div class="row">
                                 <div class="wrap-footer-item twin-item">
@@ -239,11 +258,8 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="row">
-
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                             <div class="wrap-footer-item">
                                 <h3 class="item-header">We Using Safe Payments:</h3>
@@ -254,7 +270,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                             <div class="wrap-footer-item">
                                 <h3 class="item-header">Social network</h3>
@@ -276,33 +291,32 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                             <div class="wrap-footer-item">
                                 <h3 class="item-header">Download App</h3>
                                 <div class="item-content">
                                     <div class="wrap-list-item apps-list">
                                         <ul>
-                                            <li><a href="#" class="link-to-item" title="our application on apple store">
+                                            <li>
+                                                <a href="#" class="link-to-item" title="our application on apple store">
                                                     <figure><img src="images/brands/apple-store.png" alt="apple store"
                                                             width="128" height="36"></figure>
-                                                </a></li>
-                                            <li><a href="#" class="link-to-item"
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="link-to-item"
                                                     title="our application on google play store">
                                                     <figure><img src="images/brands/google-play-store.png"
                                                             alt="google play store" width="128" height="36"></figure>
-                                                </a></li>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
-
             </div>
             <br><br>
 
