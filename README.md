@@ -14,7 +14,7 @@ The main objective of this project is to create a platform for online electronic
 
 This system stores all the information in a MYSQL Database. It stores data of the users/admins logged in, details of the admin, the products, cart details, order details, payment details. The user has to register to the website to order products to avoid spam user logins. Laravel includes built-in authentication and session services which are typically accessed via the Auth and Session facades. The frontend user interface of the website is developed using **HTML5, CSS, Javascript and Bootstrap**.
 
-### <a name="details"> 2. Application</a>
+### <a name="application"> 2. Application</a>
 Electronic Store Management system is a system which will help the owners of the electronic equipment shops to carry out the day to day businesses in a smooth and organized way. This system is developed specifically to ease the needs of the department of sales and purchase.
 
 Webpage Working: <br>
