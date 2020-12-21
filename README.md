@@ -65,20 +65,20 @@ After logging in as a customer, it will redirect the user to the welcome page wh
         <td align=center>
             <a href="https://github.com/clare0901">
                 <img src="https://user-images.githubusercontent.com/58616834/102794374-4c2a5280-43d1-11eb-8012-85a071ae1577.png" alt="Clare" height="150" width="150">
-            </a>  
-            <br><sub><b>Clare Rebello</b></sub>
+                <br><sub><b>Clare Rebello</b></sub>
+            </a>
         </td>
         <td align=center>
             <a href="https://github.com/Shravani01007">
                 <img src="https://user-images.githubusercontent.com/58616834/102800887-86e4b880-43da-11eb-95d1-6e739eb6886f.png" alt="Shravani" height="150" width="150">
-            </a> 
-            <br><sub><b>Shravani Dhuri</b></sub>
+                <br><sub><b>Shravani Dhuri</b></sub>
+            </a>
         </td>
         <td align=center>
             <a href="https://github.com/katerebello">
                 <img src="https://user-images.githubusercontent.com/58616834/102801031-b1cf0c80-43da-11eb-9531-2f14278265c7.png" alt="Kate" height="150" width="150">
+                <br><sub><b>Kate Rebello</b></sub>
             </a>
-            <br><sub><b>Kate Rebello</b></sub>
         </td>
     </table>
 </div>
