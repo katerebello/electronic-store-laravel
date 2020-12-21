@@ -17,13 +17,13 @@ This system stores all the information in a MYSQL Database. It stores data of th
 ### <a name="details"> 2. Application</a>
 Electronic Store Management system is a system which will help the owners of the electronic equipment shops to carry out the day to day businesses in a smooth and organized way. This system is developed specifically to ease the needs of the department of sales and purchase.
 
->Webpage Working: <br>
+Webpage Working: <br>
 On the main page, you have a login or register link at the right top corner which will take a particular user to its respective dashboard according to his role.
 
->Admin/dealer dashboard: <br>
+Admin/dealer dashboard: <br>
 On the admin dashboard we have options like select, add, update and delete products which  will  let a particular company dealer add and view only products added by the currently logged in dealer, protecting the privacy of other dealers.
 
->User/customer dashboard: <br>
+User/customer dashboard: <br>
 After logging in as a customer, it will redirect the user to the welcome page where customers can add or remove products to or from cart, view products category wise and confirm his order and proceed to payment.
 
 ### <a name="screenshots"> 3. Screenshots</a>
