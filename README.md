@@ -14,6 +14,8 @@ The main objective of this project is to create a platform for online electronic
 
 This system stores all the information in a MYSQL Database. It stores data of the users/admins logged in, details of the admin, the products, cart details, order details, payment details. The user has to register to the website to order products to avoid spam user logins. Laravel includes built-in authentication and session services which are typically accessed via the Auth and Session facades. The frontend user interface of the website is developed using **HTML5, CSS, Javascript and Bootstrap**.
 
+---
+
 ### <a name="application"> 2. Application</a>
 Electronic Store Management system is a system which will help the owners of the electronic equipment shops to carry out the day to day businesses in a smooth and organized way. This system is developed specifically to ease the needs of the department of sales and purchase.
 
@@ -25,6 +27,8 @@ On the admin dashboard we have options like select, add, update and delete produ
 
 User/customer dashboard: <br>
 After logging in as a customer, it will redirect the user to the welcome page where customers can add or remove products to or from cart, view products category wise and confirm his order and proceed to payment.
+
+---
 
 ### <a name="screenshots"> 3. Screenshots</a>
 ### User
@@ -50,6 +54,8 @@ After logging in as a customer, it will redirect the user to the welcome page wh
 >Product Details <br><br>
 ![image](https://user-images.githubusercontent.com/58616834/102790413-67925f00-43cb-11eb-9fab-2240f37344c3.png)
 
+---
+
 ### <a name="steps"> 4. Steps to run after Clone</a>
 - Open the project in Command prompt, cd into the project and run ``composer install``
 - To install the npm dependencies, run ``npm install``
@@ -58,6 +64,8 @@ After logging in as a customer, it will redirect the user to the welcome page wh
 - Create an empty database and add the details in the '.env' file
 - Migrate the database by ``php artisan migrate``
 - Run ``php artisan serve`` to test the project.
+
+---
 
 ### <a name="acknowledgements"> 5. Acknowledgements</a>
 <div>
