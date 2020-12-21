@@ -51,32 +51,32 @@ After logging in as a customer, it will redirect the user to the welcome page wh
 ![image](https://user-images.githubusercontent.com/58616834/102790413-67925f00-43cb-11eb-9fab-2240f37344c3.png)
 
 ### <a name="steps"> 4. Steps to run after Clone</a>
->- Open the project in Command prompt, cd into the project and run ``composer install``
->- To install the npm dependencies, run ``npm install``
->- Rename '.env.example' to '.env'
->- Generate an app encryption key by running this command ``php artisan key:generate``
->- Create an empty database and add the details in the '.env' file
->- Migrate the database by ``php artisan migrate``
->- Run ``php artisan serve`` to test the project.
+- Open the project in Command prompt, cd into the project and run ``composer install``
+- To install the npm dependencies, run ``npm install``
+- Rename '.env.example' to '.env'
+- Generate an app encryption key by running this command ``php artisan key:generate``
+- Create an empty database and add the details in the '.env' file
+- Migrate the database by ``php artisan migrate``
+- Run ``php artisan serve`` to test the project.
 
 ### <a name="acknowledgements"> 5. Acknowledgements</a>
 <div>
-    <table border=none>
+    <table>
         <td align=center>
-            <a href="https://github.com/clare0901" target="_blank">
-                <img src="https://user-images.githubusercontent.com/58616834/102794374-4c2a5280-43d1-11eb-8012-85a071ae1577.png" alt="thumbnail" height="150" width="150">
+            <a href="https://github.com/clare0901">
+                <img src="https://user-images.githubusercontent.com/58616834/102794374-4c2a5280-43d1-11eb-8012-85a071ae1577.png" alt="Clare" height="150" width="150">
             </a>  
             <br><sub><b>Clare Rebello</b></sub>
         </td>
         <td align=center>
-            <a href="https://github.com/Shravani01007" target="_blank">
-                <img src="https://user-images.githubusercontent.com/58616834/102800887-86e4b880-43da-11eb-95d1-6e739eb6886f.png" alt="thumbnail" height="150" width="150">
+            <a href="https://github.com/Shravani01007">
+                <img src="https://user-images.githubusercontent.com/58616834/102800887-86e4b880-43da-11eb-95d1-6e739eb6886f.png" alt="Shravani" height="150" width="150">
             </a> 
             <br><sub><b>Shravani Dhuri</b></sub>
         </td>
         <td align=center>
-            <a href="https://github.com/katerebello" target="_blank">
-                <img src="https://user-images.githubusercontent.com/58616834/102801031-b1cf0c80-43da-11eb-9531-2f14278265c7.png" alt="thumbnail" height="150" width="150">
+            <a href="https://github.com/katerebello">
+                <img src="https://user-images.githubusercontent.com/58616834/102801031-b1cf0c80-43da-11eb-9531-2f14278265c7.png" alt="Kate" height="150" width="150">
             </a>
             <br><sub><b>Kate Rebello</b></sub>
         </td>
