@@ -60,3 +60,27 @@ After logging in as a customer, it will redirect the user to the welcome page wh
 >- Run ``php artisan serve`` to test the project.
 
 ### <a name="acknowledgements"> 5. Acknowledgements</a>
+<div>
+    <table border=none>
+        <td align=center>
+            <a href="https://github.com/clare0901" target="_blank">
+                <img src="https://user-images.githubusercontent.com/58616834/102794374-4c2a5280-43d1-11eb-8012-85a071ae1577.png" alt="thumbnail" height="150" width="150">
+            </a>  
+            <br><sub><b>Clare Rebello</b></sub>
+        </td>
+        <td align=center>
+            <a href="https://github.com/Shravani01007" target="_blank">
+                <img src="https://user-images.githubusercontent.com/58616834/102800887-86e4b880-43da-11eb-95d1-6e739eb6886f.png" alt="thumbnail" height="150" width="150">
+            </a> 
+            <br><sub><b>Shravani Dhuri</b></sub>
+        </td>
+        <td align=center>
+            <a href="https://github.com/katerebello" target="_blank">
+                <img src="https://user-images.githubusercontent.com/58616834/102801031-b1cf0c80-43da-11eb-9531-2f14278265c7.png" alt="thumbnail" height="150" width="150">
+            </a>
+            <br><sub><b>Kate Rebello</b></sub>
+        </td>
+    </table>
+</div>
+    
+    
