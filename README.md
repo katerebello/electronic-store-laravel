@@ -36,23 +36,23 @@ After logging in as a customer, it will redirect the user to the welcome page wh
 ![user:homepage](https://user-images.githubusercontent.com/58616834/102789172-c5be4280-43c9-11eb-8671-50108fe548f8.png)
 
 >All Products <br><br>
-![image](https://user-images.githubusercontent.com/58616834/102789393-1df54480-43ca-11eb-9407-48ca4366e404.png)
+![products](https://user-images.githubusercontent.com/58616834/102789393-1df54480-43ca-11eb-9407-48ca4366e404.png)
 
 >Cart <br><br>
-![image](https://user-images.githubusercontent.com/58616834/102789651-6a408480-43ca-11eb-8405-b080a559e206.png)
+![cart](https://user-images.githubusercontent.com/58616834/102789651-6a408480-43ca-11eb-8405-b080a559e206.png)
 
 >Orders <br><br>
-![image](https://user-images.githubusercontent.com/58616834/102789814-a4118b00-43ca-11eb-8239-b2ad48d312e1.png)
+![orders](https://user-images.githubusercontent.com/58616834/102789814-a4118b00-43ca-11eb-8239-b2ad48d312e1.png)
 
 ### Admin
 >Homepage <br><br>
-![image](https://user-images.githubusercontent.com/58616834/102790126-05395e80-43cb-11eb-86b7-4cf43758e14a.png)
+![admin:homepage](https://user-images.githubusercontent.com/58616834/102790126-05395e80-43cb-11eb-86b7-4cf43758e14a.png)
 
 >All products added by the currently logged in dealer <br><br>
-![image](https://user-images.githubusercontent.com/58616834/102790198-200bd300-43cb-11eb-8cd5-9f440ec37386.png)
+![products added](https://user-images.githubusercontent.com/58616834/102790198-200bd300-43cb-11eb-8cd5-9f440ec37386.png)
 
 >Product Details <br><br>
-![image](https://user-images.githubusercontent.com/58616834/102790413-67925f00-43cb-11eb-9fab-2240f37344c3.png)
+![product details](https://user-images.githubusercontent.com/58616834/102790413-67925f00-43cb-11eb-9fab-2240f37344c3.png)
 
 ---
 
